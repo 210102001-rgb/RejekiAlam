@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="hijau">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rejeki Alam — Supplier Material Bangunan</title>
+<meta name="description" content="Rejeki Alam menyediakan screed, mortar, perekat keramik, cat, dan material finishing untuk kebutuhan proyek Anda.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f2417;          /* deep forest — headings, dark surfaces */
+  --cream:#f7f9f5;        /* page background */
+  --white:#ffffff;
+  --green:#1f7a4d;        /* primary green */
+  --green-dark:#155a39;
+  --green-soft:#e8f3ec;
+  --gold:#c9a227;         /* gold accent */
+  --gold-light:#e8cf72;
+  --gold-soft:#fbf5e2;
+  --oat:#dfe5dd;
+  --muted:#6f7f74;
+  --black60:#4a5a50;
+  --green-ok:#1f7a4d;
+  --red:#c0392b;
+  --blue:#2f6f9f;
+  --lime:#7ab55a;
+  --pink:#b5651d;
+  --rb:4px;--rc:10px;--rl:14px
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+a{color:inherit;text-decoration:none}
+
+nav{border-bottom:1px solid var(--oat);background:rgba(250,249,246,.94);backdrop-filter:blur(8px);
+    position:sticky;top:0;z-index:50}
+.navin{display:flex;align-items:center;gap:26px;height:64px}
+.logo{font-size:19px;font-weight:600;letter-spacing:-.5px;white-space:nowrap}
+.logo i{color:var(--gold);font-style:normal}
+.gold-text{color:var(--gold)}
+.navlinks{display:flex;gap:22px;font-size:15px;flex:1}
+.navlinks a{opacity:.55;cursor:pointer;padding:4px 0;border-bottom:2px solid transparent}
+.navlinks a:hover{opacity:1}
+.navlinks a.on{opacity:1;font-weight:500;border-bottom-color:var(--gold)}
+.navact{display:flex;gap:10px;align-items:center}
+
+.btn{padding:11px 18px;border-radius:var(--rb);font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;
+     border:1px solid var(--green);background:var(--green);color:#fff;transition:.15s;display:inline-flex;
+     align-items:center;justify-content:center;gap:8px}
+.btn:hover{background:var(--green-dark);border-color:var(--green-dark)}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:#2a2000}
+.btn.gold:hover{background:var(--gold-light);border-color:var(--gold-light)}
+.btn:hover{transform:scale(1.03)}.btn:active{transform:scale(.97)}
+.btn.out{background:transparent;color:var(--green);border-color:var(--green)}
+.btn.out:hover{background:var(--green-soft)}
+.btn.wa{background:#25d366;border-color:#25d366;color:#fff}
+.btn.wa:hover{background:#1eb455;border-color:#1eb455}
+.btn.sm{padding:8px 13px;font-size:13px;min-height:38px}
+.btn.full{width:100%}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+
+/* hero */
+.hero{padding:76px 0 68px}
+.tag{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--muted);border:1px solid var(--oat);
+     padding:5px 11px;border-radius:100px;background:var(--white);margin-bottom:22px}
+.dot{width:6px;height:6px;background:var(--green);border-radius:50%;box-shadow:0 0 0 3px rgba(11,223,80,.18)}
+h1{font-size:clamp(32px,5.6vw,56px);font-weight:400;line-height:1.02;letter-spacing:-2.2px;max-width:19ch}
+h1 em{font-style:normal;color:var(--gold)}
+.sub{font-size:17px;color:var(--black60);margin-top:20px;max-width:56ch;line-height:1.55}
+.heroact{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+
+/* stats strip */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--oat);border-bottom:1px solid var(--oat)}
+.stats div{padding:28px 20px;border-right:1px solid var(--oat)}
+.stats div:last-child{border-right:none}
+.stats div:last-child{border-right:none}
+.stats .n{font-size:31px;font-weight:600;letter-spacing:-1.2px;line-height:1;color:var(--green)}
+.stats .l{font-size:12px;color:var(--muted);margin-top:7px}
+
+/* sections */
+section{padding:72px 0}
+.shead{margin-bottom:34px;max-width:62ch}
+.shead h2{font-size:clamp(24px,3.4vw,34px);font-weight:400;letter-spacing:-1.2px;line-height:1.1}
+.shead p{color:var(--black60);margin-top:11px;font-size:15.5px;line-height:1.55}
+
+/* feature cards */
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.fcard{background:var(--white);border:1px solid var(--oat);border-radius:var(--rc);padding:24px;transition:.18s}
+.fcard:hover{border-color:var(--green);transform:translateY(-2px);box-shadow:0 6px 24px rgba(15,36,23,.07)}
+.fcard .ic{width:44px;height:44px;border-radius:var(--rb);background:var(--green-soft);border:1px solid #cfe3d6;
+           display:grid;place-items:center;font-size:20px;margin-bottom:15px}
+.fcard h3{font-size:16px;font-weight:500;margin-bottom:8px}
+.fcard p{font-size:13.5px;color:var(--muted);line-height:1.55}
+
+/* specs */
+.specs{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px}
+.specs div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--oat);
+           font-size:14px}
+.specs span:first-child{color:var(--muted)}
+.specs span:last-child{font-weight:500;text-align:right}
+
+/* process */
+.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.pstep{border-top:2px solid var(--gold);padding-top:15px}
+.pstep .n{font-size:12px;color:var(--gold);font-weight:700;margin-bottom:9px;letter-spacing:.08em}
+.pstep h3{font-size:15px;font-weight:500;margin-bottom:6px}
+.pstep p{font-size:13px;color:var(--muted);line-height:1.5}
+
+/* catalog */
+.filters{display:flex;gap:8px;align-items:center;padding:20px 0;border-top:1px solid var(--oat);
+         border-bottom:1px solid var(--oat);margin-bottom:28px;flex-wrap:wrap}
+.chip{padding:8px 15px;border:1px solid var(--oat);background:var(--white);border-radius:100px;font-size:13px;
+      cursor:pointer;transition:.15s;font-family:inherit;color:var(--ink);min-height:38px}
+.chip:hover{border-color:var(--black60)}
+.chip.on{background:var(--green);color:#fff;border-color:var(--green)}
+.srch{margin-left:auto;padding:10px 14px;border:1px solid var(--oat);background:var(--white);border-radius:var(--rb);
+      font-family:inherit;font-size:13.5px;min-width:210px;min-height:40px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-bottom:64px}
+.card{background:var(--white);border:1px solid var(--oat);border-radius:var(--rc);overflow:hidden;
+      transition:.18s;display:flex;flex-direction:column}
+.card:hover{border-color:var(--green);transform:translateY(-2px);box-shadow:0 6px 24px rgba(15,36,23,.07)}
+.thumb{aspect-ratio:4/3;background:var(--cream);border-bottom:1px solid var(--oat);position:relative;
+       display:grid;place-items:center;cursor:pointer}
+.thumb .ico{font-size:46px;opacity:.8}
+.pill{position:absolute;top:10px;left:10px;padding:4px 9px;font-size:10px;font-weight:600;border-radius:100px;
+      text-transform:uppercase;letter-spacing:.06em}
+.pill.Baru{background:var(--lime);color:#000}
+.pill.Terlaris{background:var(--green);color:#000}
+.pill.StokMenipis{background:var(--red);color:#fff}
+.cbody{padding:16px;display:flex;flex-direction:column;gap:9px;flex:1}
+.ctitle{font-size:15px;font-weight:500;line-height:1.3}
+.cdesc{font-size:12.5px;color:var(--muted);line-height:1.45;flex:1}
+.cfoot{display:flex;justify-content:space-between;align-items:center;gap:8px;padding-top:11px;
+       border-top:1px solid var(--oat)}
+.price{font-size:17px;font-weight:600;letter-spacing:-.4px}
+.price s{color:var(--muted);font-weight:300;font-size:13px;margin-right:6px}
+.price .per{font-size:12px;font-weight:400;color:var(--muted)}
+.stock{font-size:11px;color:var(--muted)}
+.stock.lowc{color:var(--red);font-weight:500}
+.empty{text-align:center;padding:70px 20px;color:var(--muted)}
+
+
+
+/* ── theme switching (admin picks one; saved server-side) ───────────────── */
+[data-theme="hijau"]{
+  --ink:#0f2417; --cream:#f7f9f5; --green:#1f7a4d; --green-dark:#155a39;
+  --green-soft:#e8f3ec; --gold:#c9a227; --gold-light:#e8cf72; --gold-soft:#fbf5e2;
+  --oat:#dfe5dd; --muted:#6f7f74; --black60:#4a5a50;
+}
+[data-theme="putih"]{
+  --ink:#14161a; --cream:#ffffff; --green:#0f766e; --green-dark:#0b5c56;
+  --green-soft:#e6f4f2; --gold:#b8860b; --gold-light:#d4a017; --gold-soft:#fdf6e3;
+  --oat:#e6e8eb; --muted:#6b7280; --black60:#4b5563;
+}
+[data-theme="biru"]{
+  --ink:#0c1b2a; --cream:#f4f8fc; --green:#1e5f8c; --green-dark:#154a6e;
+  --green-soft:#e4eef6; --gold:#c9922e; --gold-light:#e0ad4d; --gold-soft:#fbf2e0;
+  --oat:#d9e3ec; --muted:#66788a; --black60:#43566a;
+}
+/* hard-coded darks that must follow the theme */
+.dnav,.demo-note,.wa-band,.wa-step-num{background:var(--ink)}
+.login-wrap{background:linear-gradient(160deg,var(--ink),var(--green-dark))}
+
+/* ── category cards (replaced the spec-sheet table) ─────────────────────── */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cat{background:var(--white);border:1px solid var(--oat);border-radius:var(--rc);padding:22px;
+     transition:.18s;cursor:pointer;display:flex;flex-direction:column;gap:9px}
+.cat:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 8px 26px rgba(15,36,23,.08)}
+.cat .cic{width:44px;height:44px;border-radius:var(--rb);background:var(--gold-soft);
+          border:1px solid #ecdcb0;display:grid;place-items:center;font-size:21px;margin-bottom:4px}
+.cat h3{font-size:15.5px;font-weight:600;letter-spacing:-.2px}
+.cat p{font-size:13px;color:var(--muted);line-height:1.5;flex:1}
+.cat-go{font-size:12.5px;font-weight:600;color:var(--green);margin-top:2px}
+
+/* ── WhatsApp order flow (replaced the numbered spec strip) ─────────────── */
+.wa-flow{display:flex;flex-direction:column;gap:12px}
+.wf-step{background:var(--white);border:1px solid var(--oat);border-radius:var(--rc);padding:22px 24px;
+         display:flex;gap:18px;align-items:flex-start;transition:.18s}
+.wf-step:hover{border-color:var(--green);box-shadow:0 4px 18px rgba(15,36,23,.05)}
+.wf-ic{width:46px;height:46px;border-radius:50%;background:#e7f7ec;border:1px solid #c6ead3;
+       display:grid;place-items:center;font-size:22px;flex-shrink:0}
+.wf-step h3{font-size:16px;font-weight:600;margin-bottom:6px;letter-spacing:-.2px}
+.wf-step p{font-size:13.5px;color:var(--black60);line-height:1.6;max-width:78ch}
+
+/* ── WhatsApp CTA band ──────────────────────────────────────────────────── */
+.wa-band{background:linear-gradient(135deg,#0f2417 0%,#155a39 100%);color:#fff;border-radius:var(--rl);
+         padding:38px;display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap;
+         border:1px solid #1c5f3f}
+.wa-band h2{font-size:25px;font-weight:500;letter-spacing:-.8px;margin-bottom:9px}
+.wa-band p{opacity:.82;font-size:14.5px;max-width:50ch;line-height:1.55}
+
+@media(max-width:1024px){.cats{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:820px){.cats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.cats{grid-template-columns:1fr}.wf-step{padding:18px;gap:14px}
+  .wa-band{padding:26px}}
+
+
+/* ── admin login ───────────────────────────────────────────────────────── */
+.login-wrap{position:fixed;inset:0;background:linear-gradient(160deg,#0f2417,#155a39);z-index:300;
+            display:grid;place-items:center;padding:20px}
+.login-card{background:var(--white);border-radius:var(--rl);width:100%;max-width:380px;padding:34px;
+            box-shadow:0 24px 60px rgba(0,0,0,.28);border:1px solid #cfe3d6}
+.lg-err{color:var(--red);font-size:13px;min-height:19px;margin:-4px 0 8px;font-weight:500}
+#lg_user,#lg_pass{min-height:46px}
+
+/* ── admin shell rebuild ───────────────────────────────────────────────── */
+.dash{background:#f2f5f2;min-height:100vh}
+.dnav{background:var(--ink);color:#fff;border-bottom:2px solid var(--gold)}
+.dnav .navin{height:62px}.dnav .logo{color:#fff;font-size:18px}
+.dside{width:214px;flex-shrink:0;border-right:1px solid var(--oat);background:var(--white);
+       padding:22px 12px;min-height:calc(100vh - 62px)}
+.dside-h{font-family:ui-monospace,monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+         color:var(--muted);padding:0 12px 12px}
+.dside a{display:flex;align-items:center;gap:11px;padding:11px 13px;border-radius:var(--rb);
+         color:var(--black60);cursor:pointer;font-size:14px;margin-bottom:3px;font-weight:500;transition:.14s}
+.dside a:hover{background:var(--green-soft);color:var(--green-dark)}
+.dside a.on{background:var(--green);color:#fff}
+.dmain{flex:1;padding:28px;min-width:0;max-width:1320px}
+.dtitle{font-size:25px;font-weight:500;letter-spacing:-.9px;color:var(--ink)}
+.dsub{font-size:13.5px;color:var(--muted);margin-top:4px}
+
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-bottom:20px}
+.kpi{background:var(--white);border:1px solid var(--oat);border-radius:var(--rc);padding:18px;
+     border-top:3px solid var(--green)}
+.kpi.g{border-top-color:var(--gold)}
+.kpi .lb{font-size:11.5px;color:var(--muted);margin-bottom:10px;font-weight:500}
+.kpi .vl{font-size:26px;font-weight:600;letter-spacing:-1.1px;color:var(--green-dark)}
+.kpi.g .vl{color:var(--gold)}
+.kpi .hint{font-size:11.5px;color:var(--muted);margin-top:7px}
+
+.panel{background:var(--white);border:1px solid var(--oat);border-radius:var(--rc);padding:20px;margin-bottom:16px}
+.panel h3{font-size:15.5px;font-weight:600;margin-bottom:16px;color:var(--ink)}
+.phead{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px;gap:16px;flex-wrap:wrap}
+
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-size:10.5px;color:var(--muted);padding:0 10px 10px;border-bottom:1px solid var(--oat);
+   font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+td{padding:13px 10px;border-bottom:1px solid #f0f3f0;font-size:13.5px}
+tr:last-child td{border:none}
+.st{display:inline-block;padding:4px 11px;font-size:11px;border-radius:100px;font-weight:600}
+.st.SELESAI{background:#e7f7ec;color:#15603c}
+.st.DIPROSES{background:var(--gold-soft);color:#7a6014}
+.st.MENUNGGU{background:#eef1ee;color:var(--muted)}
+.st.DIBATALKAN{background:#fbeae8;color:var(--red)}
+
+.bars{display:flex;align-items:flex-end;gap:8px;height:160px;padding-top:12px}
+.bar{flex:1;background:var(--green);border-radius:3px 3px 0 0;min-height:4px;transition:.2s;position:relative}
+.bar:hover{background:var(--gold)}
+.bar span{position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);font-size:10.5px;color:var(--muted)}
+
+@media(max-width:1024px){.kpis{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:820px){.dside{display:none}.dmain{padding:16px}}
+@media(max-width:560px){.kpis{grid-template-columns:1fr}}
+
+
+/* ── project portfolio ─────────────────────────────────────────────────── */
+.proj{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pj{background:var(--white);border:1px solid var(--oat);border-radius:var(--rc);overflow:hidden;
+    transition:.18s;display:flex;flex-direction:column}
+.pj:hover{border-color:var(--green);transform:translateY(-3px);box-shadow:0 8px 26px rgba(15,36,23,.08)}
+.pj-ic{height:96px;background:var(--green-soft);border-bottom:1px solid #cfe3d6;display:grid;
+       place-items:center;font-size:38px}
+.pj-body{padding:18px;display:flex;flex-direction:column;gap:9px;flex:1}
+.pj-body h3{font-size:15.5px;font-weight:600;line-height:1.35;letter-spacing:-.2px}
+.pj-meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:2px}
+.pj-meta span{font-size:10.5px;font-family:ui-monospace,monospace;letter-spacing:.04em;
+              background:var(--gold-soft);color:#7a6014;border:1px solid #ecdcb0;
+              padding:2px 8px;border-radius:100px}
+.pj-body p{font-size:13px;color:var(--muted);line-height:1.55;flex:1}
+
+/* ── testimonials ──────────────────────────────────────────────────────── */
+.tm{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.tq{background:var(--white);border:1px solid var(--oat);border-left:3px solid var(--gold);
+    border-radius:var(--rc);padding:22px;margin:0;display:flex;flex-direction:column;gap:14px}
+.tq p{font-size:14.5px;line-height:1.65;color:var(--black60)}
+.tq footer{display:flex;flex-direction:column;gap:2px;margin-top:auto}
+.tq footer strong{font-size:13.5px;font-weight:600;color:var(--ink)}
+.tq footer span{font-size:12px;color:var(--muted)}
+
+/* ── client logos ──────────────────────────────────────────────────────── */
+.logos{display:flex;flex-wrap:wrap;gap:10px}
+.logos span{background:var(--white);border:1px solid var(--oat);border-radius:var(--rb);
+            padding:13px 20px;font-size:13.5px;font-weight:600;color:var(--black60);
+            letter-spacing:-.1px;transition:.16s}
+.logos span:hover{border-color:var(--green);color:var(--green-dark);background:var(--green-soft)}
+
+@media(max-width:1024px){.proj{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.proj{grid-template-columns:1fr}.tm{grid-template-columns:1fr}}
+
+
+.demo-note{background:var(--gold-soft);border:1px solid #ecdcb0;border-left:3px solid var(--gold);
+           border-radius:var(--rc);padding:15px 18px;font-size:13px;color:#6b5510;line-height:1.6;margin-bottom:26px}
+.demo-note strong{color:#4a3a08}
+
+/* modal */
+.modal{position:fixed;inset:0;background:rgba(17,17,17,.55);z-index:100;display:none;place-items:center;padding:20px}
+.modal.on{display:grid}
+.mbox{background:var(--cream);border:1px solid var(--oat);border-radius:var(--rc);width:100%;max-width:540px;
+      max-height:90vh;overflow-y:auto;padding:26px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fld{margin-bottom:14px}
+.fld label{display:block;font-size:12px;font-weight:500;margin-bottom:5px;color:var(--black60)}
+.fld input,.fld textarea,.fld select{width:100%;padding:11px 12px;border:1px solid var(--oat);background:var(--white);
+      border-radius:var(--rb);font-family:inherit;font-size:15px;min-height:46px}
+.fld input:focus,.fld textarea:focus{outline:none;border-color:var(--ink)}
+
+
+/* admin form controls (.in was used by the product form but never styled) */
+.in{width:100%;padding:11px 12px;border:1px solid var(--oat);background:var(--white);
+    border-radius:var(--rb);font-family:inherit;font-size:15px;min-height:46px;color:var(--ink)}
+.in:focus{outline:none;border-color:var(--ink)}
+textarea.in{min-height:96px;resize:vertical;line-height:1.55}
+.btn.danger{background:#fff;color:#b3261e;border:1px solid #e8c9c6}
+.btn.danger:hover{background:#fdf2f1;border-color:#b3261e}
+
+/* admin */
+.dash{background:#f4f4f2;min-height:100vh}
+.dnav{background:var(--ink);color:#fff}
+.dnav .navin{height:58px}.dnav .logo{color:#fff}
+.dside{width:200px;flex-shrink:0;border-right:1px solid var(--oat);background:var(--white);
+       padding:18px 12px;min-height:calc(100vh - 58px)}
+.dside a{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:var(--rb);color:var(--black60);
+         cursor:pointer;font-size:14px;margin-bottom:2px}
+.dside a.on{background:var(--ink);color:#fff}
+.dmain{flex:1;padding:26px;min-width:0}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
+.kpi{background:var(--white);border:1px solid var(--oat);border-radius:var(--rc);padding:16px}
+.kpi .lb{font-size:11px;color:var(--muted);margin-bottom:8px}
+.kpi .vl{font-size:24px;font-weight:600;letter-spacing:-1px}
+.panel{background:var(--white);border:1px solid var(--oat);border-radius:var(--rc);padding:18px;margin-bottom:16px}
+.panel h3{font-size:15px;font-weight:500;margin-bottom:14px}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-size:10.5px;color:var(--muted);padding:0 8px 8px;border-bottom:1px solid var(--oat)}
+td{padding:10px 8px;border-bottom:1px solid #f0efec;font-size:13.5px}
+tr:last-child td{border:none}
+.st{display:inline-block;padding:3px 9px;font-size:11px;border-radius:100px;font-weight:500}
+.st.SELESAI{background:#e8f9e8;color:#0a7a0a}
+.st.DIPROSES{background:#fff2e8;color:#a8470a}
+.st.MENUNGGU{background:#f0f0ee;color:var(--muted)}
+.st.DIBATALKAN{background:#fdeaea;color:var(--red)}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);
+       background:var(--ink);color:#fff;padding:12px 22px;border-radius:var(--rb);font-size:14px;z-index:200;
+       transition:.25s}
+.toast.on{transform:translateX(-50%) translateY(0)}
+
+footer{border-top:1px solid var(--oat);padding:28px 0;color:var(--muted);font-size:13px}
+.fin{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.fin h4{color:var(--ink);font-size:13px;font-weight:500;margin-bottom:9px}
+.fin a{display:block;color:var(--muted);padding:3px 0;cursor:pointer}
+.fin a:hover{color:var(--ink)}
+.hidden{display:none}
+
+@media(max-width:1024px){.grid{grid-template-columns:repeat(3,1fr)}.feat{grid-template-columns:repeat(2,1fr)}
+  .proc{grid-template-columns:repeat(2,1fr)}.kpis{grid-template-columns:repeat(2,1fr)}
+  .stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:820px){.grid{grid-template-columns:repeat(2,1fr)}.navlinks{display:none}.dside{display:none}
+  .dmain{padding:16px}.specs{grid-template-columns:1fr}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.feat{grid-template-columns:1fr}
+  .proc{grid-template-columns:1fr}.row2{grid-template-columns:1fr}.srch{margin-left:0;width:100%}
+  .stats .n{font-size:25px}.hero{padding:48px 0 42px}}
+</style>
+</head>
+<body>
+
+<nav id="navMain">
+  <div class="wrap navin">
+    <div class="logo" onclick="route('home')">REJEKI<i>ALAM</i></div>
+    <div class="navlinks" id="navLinks">
+      <a class="on" data-r="home" onclick="route('home')">Beranda</a>
+      <a data-r="produk" onclick="route('produk')">Produk</a>
+      <a data-r="about" onclick="route('home')">Tentang</a>
+      <a data-r="cara" onclick="route('home')">Cara Kerja</a>
+      <a onclick="route('admin')">Admin</a>
+    </div>
+    <div class="navact">
+      <button class="btn wa sm" onclick="waGeneral()">WhatsApp</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════ HOME — company dashboard ══════════ -->
+<div id="vHome">
+  <div class="wrap">
+    <div class="hero">
+      <div class="tag"><span class="dot"></span> Grosir & eceran — siap kirim seluruh Indonesia</div>
+      <h1>Material bangunan <em>berkualitas</em> untuk setiap proyek.</h1>
+      <p class="sub">Rejeki Alam menyediakan screed, mortar, perekat, cat, dan material finishing
+        dengan kualitas terjamin. Satu supplier untuk seluruh kebutuhan proyek Anda.</p>
+      <div class="heroact">
+        <button class="btn" onclick="route('produk')">Lihat Produk</button>
+        <button class="btn wa" onclick="waGeneral()">Pesan via WhatsApp</button>
+      </div>
+    </div>
+
+    <div class="demo-note">
+      <strong>Data contoh.</strong> Portofolio proyek, testimoni, dan nama klien di halaman ini
+      masih data demonstrasi karena data asli belum diterima. Ganti dengan data sebenarnya
+      sebelum situs dipublikasikan.
+    </div>
+
+    <div class="stats">
+      <div><div class="n">15+</div><div class="l">Tahun pengalaman</div></div>
+      <div><div class="n">500+</div><div class="l">Produk siap kirim</div></div>
+      <div><div class="n">48 Jam</div><div class="l">Pengiriman Jabodetabek</div></div>
+      <div><div class="n">100%</div><div class="l">Garansi material</div></div>
+    </div>
+  </div>
+
+  <div class="wrap"><section>
+    <div class="shead"><h2>Kenapa Rejeki Alam</h2>
+      <p>Material yang salah pilih bisa menyebabkan retak, rembes, dan kebocoran yang baru
+        ketahuan setelah proyek selesai. Karena itu kami fokus pada spesifikasi yang benar dan
+        ketersediaan barang yang tidak menggantung.</p></div>
+    <div class="feat">
+      <div class="fcard"><div class="ic">${fillOther('spesifikasi', 26)}</div><h3>Spesifikasi jelas</h3>
+        <p>Setiap produk disertai data teknis dan takaran Standar SNI atau ASTM. Tidak ada istilah
+           "mirip" atau "setara" yang mengaburkan spesifikasi.</p></div>
+      <div class="fcard"><div class="ic">${fillOther('pabrik', 26)}</div><h3>Bukan reseller</h3>
+        <p>Material berasal dari pabrik langsung dengan batch number yang bisa ditelusuri.
+           Mutu antarbatch konsisten dan dapat ditelusuri.</p></div>
+      <div class="fcard"><div class="ic">${fillOther('truk', 26)}</div><h3>Stok real-time</h3>
+        <p>Stok diupdate setiap hari. Barang yang tertulis tersedia memang tersedia — bukan
+           disimpan khusus untuk pesanan lain yang lebih besar.</p></div>
+      <div class="fcard"><div class="ic">${fillOther('lengkap', 26)}</div><h3>Lengkap satu proyek</h3>
+        <p>Mortar, perekat, cat, dan finishing tersedia dalam satu sumber. Tidak perlu mencari
+           ke banyak pemasok dengan spesifikasi yang tidak seragam.</p></div>
+      <div class="fcard"><div class="ic">${fillOther('harga', 26)}</div><h3>Harga transparan</h3>
+        <p>Harga grosir dan eceran tercantum apa adanya. Untuk volume besar, hubungi via WhatsApp
+           untuk penawaran khusus proyek.</p></div>
+      <div class="fcard"><div class="ic">${fillOther('bantuan', 26)}</div><h3>Bantuan teknis</h3>
+        <p>Bingung memilih ukuran atau merek? Konsultasi gratis bersama teknisi kami sebelum
+           Anda checkout.</p></div>
+    </div>
+  </section></div>
+
+  <div class="wrap"><section style="padding-top:0">
+    <div class="shead"><h2>Kategori Produk</h2>
+      <p>Rangkaian material yang kami sediakan untuk kebutuhan konstruksi dan finishing.</p></div>
+    <div class="cats">
+      <a class="cat" onclick="route('produk');setTimeout(()=>setCat('Aksesoris',document.querySelector('.chip:nth-child(4)')),300)">
+        <div class="cic">${fillCat(cat, 30)}</div>
+        <h3>Mortar &amp; Screed</h3>
+        <p>Semen, pasir silika, dan additive untuk lantai serta dinding.</p>
+        <span class="cat-go">Lihat produk →</span></a>
+      <a class="cat" onclick="route('produk')">
+        <div class="cic">${fillCat(cat, 30)}</div>
+        <h3>Perekat Keramik</h3>
+        <p>Perekat CMR dan dispersion untuk pemasangan lantai dan dinding.</p>
+        <span class="cat-go">Lihat produk →</span></a>
+      <a class="cat" onclick="route('produk')">
+        <div class="cic">${fillCat(cat, 30)}</div>
+        <h3>Dinding &amp; Lantai</h3>
+        <p>Plester, gypsum, dan screed siap pakai.</p>
+        <span class="cat-go">Lihat produk →</span></a>
+      <a class="cat" onclick="route('produk')">
+        <div class="cic">${fillCat(cat, 30)}</div>
+        <h3>Cat &amp; Coating</h3>
+        <p>Cat interior, eksterior, dan pelapis anti-bocor.</p>
+        <span class="cat-go">Lihat produk →</span></a>
+      <a class="cat" onclick="route('produk')">
+        <div class="cic">${fillCat(cat, 30)}</div>
+        <h3>Waterproofing</h3>
+        <p>Pelapis waterproof untuk lantai, dinding, dan atap.</p>
+        <span class="cat-go">Lihat produk →</span></a>
+      <a class="cat" onclick="route('produk')">
+        <div class="cic">${fillCat(cat, 30)}</div>
+        <h3>Isolasi &amp; Sealant</h3>
+        <p>Waterproof, foam, dan silicon sealant.</p>
+        <span class="cat-go">Lihat produk →</span></a>
+      <a class="cat" onclick="route('produk')">
+        <div class="cic">${fillCat(cat, 30)}</div>
+        <h3>Penguat Beton</h3>
+        <p>Admixture dan oberit untuk beton struktural.</p>
+        <span class="cat-go">Lihat produk →</span></a>
+      <a class="cat" onclick="route('produk')">
+        <div class="cic">${fillCat(cat, 30)}</div>
+        <h3>Aksesoris Proyek</h3>
+        <p>Mesh, angkur, dan penutup sambungan.</p>
+        <span class="cat-go">Lihat produk →</span></a>
+    </div>
+  </section></div>
+
+  <div class="wrap"><section style="padding-top:0">
+    <div class="shead"><h2>Cara Pesan</h2>
+      <p>Pemesanan lewat WhatsApp — cepat, jelas, dan ada orang yang bisa dihubungi langsung.</p></div>
+    <div class="wa-flow">
+      <div class="wf-step">
+        <div class="wf-ic">${fillOther('chat', 24)}</div>
+        <div>
+          <h3>Konsultasi lewat WhatsApp</h3>
+          <p>Kirim kebutuhan Anda — jenis material, jumlah, dan lokasi pengiriman.
+             Tim kami akan membantu mencarikan spesifikasi yang pas dan mengonfirmasi ketersediaan.</p>
+        </div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-ic">${fillStep('invoice', 24)}</div>
+        <div>
+          <h3>Kami kirimkan penawaran</h3>
+          <p>Berupa daftar material, harga, dan estimasi waktu pengiriman.
+             Volume besar mendapat penawaran khusus proyek.</p>
+        </div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-ic">${fillStep('konfirmasi', 24)}</div>
+        <div>
+          <h3>Konfirmasi &amp; bayar</h3>
+          <p>Setujui rincian pesanan, lalu lakukan pembayaran via transfer bank atau QRIS.
+             Nota resmi kami kirimkan sebagai bukti.</p>
+        </div>
+      </div>
+      <div class="wf-step">
+        <div class="wf-ic">${fillStep('truk', 24)}</div>
+        <div>
+          <h3>Material dikirim</h3>
+          <p>Jabodetabek 1–2 hari kerja, luar Jawa 3–5 hari kerja via ekspedisi kargo.
+             Nomor resi kami kirimkan lewat WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </section></div>
+
+  <div class="wrap"><section style="padding-top:0">
+    <div class="shead"><h2>Proyek yang Kami Kerjakan</h2>
+      <p>Material yang kami supply sudah dipakai pada gedung perkantoran, gudang, dan
+        renovasi rumah. Berikut contoh proyek di bawah ini.</p></div>
+    <div class="proj" id="projGrid"></div>
+  </section></div>
+
+  <div class="wrap"><section style="padding-top:0">
+    <div class="shead"><h2>Apa Kata Pelanggan</h2>
+      <p>Contoh testimoni dari kontraktor dan pemilik proyek yang pernah kami supply.</p></div>
+    <div class="tm" id="tmGrid"></div>
+  </section></div>
+
+  <div class="wrap"><section style="padding-top:0;padding-bottom:80px">
+    <div class="shead"><h2>Klien &amp; Mitra</h2>
+      <p>Contoh perusahaan dan kontraktor yang menjadi mitra supply kami.</p></div>
+    <div class="logos" id="logosGrid"></div>
+    <p class="dsub" style="margin-top:20px">Seluruh nama di atas adalah contoh tampilan,
+      bukan klien sebenarnya.</p>
+  </section></div>
+
+  <div class="wrap"><section style="padding-top:0;padding-bottom:80px">
+    <div class="wa-band">
+      <div><h2>Punya kebutuhan proyek?</h2>
+        <p>Kirim detail kebutuhan Anda lewat WhatsApp — jenis material, jumlah, dan lokasi
+           pengiriman. Tim kami akan membantu mencarikan spesifikasi yang tepat.</p></div>
+      <button class="btn wa" onclick="waGeneral()" style="flex-shrink:0;padding:13px 22px;font-size:15px">
+        Hubungi via WhatsApp</button>
+    </div>
+  </section></div>
+
+  <footer><div class="wrap fin">
+    <div><h4>REJEKI ALAM</h4>
+      <div style="line-height:1.7;max-width:34ch">Supplier material bangunan: screed, mortar,
+        perekat, cat, dan finishing.</div></div>
+    <div><h4>Navigasi</h4><a onclick="route('home')">Beranda</a>
+      <a onclick="route('produk')">Katalog Produk</a></div>
+    <div><h4>Kontak</h4><a onclick="waGeneral()">WhatsApp</a></div>
+    <div style="align-self:flex-end">© <span class="yr"></span> Rejeki Alam</div>
+  </div></footer>
+</div>
+
+<!-- ══════════ PRODUCT PAGE ══════════ -->
+<div id="vProduk" class="hidden">
+  <div class="wrap">
+    <div class="hero" style="padding-bottom:44px">
+      <div class="tag"><span class="dot"></span> <span id="cnt">Memuat…</span></div>
+      <h1>Katalog <em>Material</em></h1>
+      <p class="sub">Material bangunan dengan spesifikasi jelas. Tekan tombol WhatsApp pada produk untuk
+        memesan langsung — konfirmasi biasanya dalam beberapa menit.</p>
+    </div>
+
+    <div class="filters">
+      <button class="chip on" onclick="setCat('Semua',this)">Semua</button>
+      <button class="chip" onclick="setCat('Elektronik',this)">Unit</button>
+      <button class="chip" onclick="setCat('Perlengkapan',this)">Perlengkapan</button>
+      <button class="chip" onclick="setCat('Aksesoris',this)">Suku Cadang</button>
+      <input class="srch" id="q" placeholder="Cari produk…">
+      <select class="srch" id="sort" style="min-width:155px" onchange="load()">
+        <option value="">Urutkan</option>
+        <option value="price_asc">Harga terendah</option>
+        <option value="price_desc">Harga tertinggi</option>
+        <option value="name">Nama A-Z</option>
+      </select>
+    </div>
+
+    <div class="grid" id="grid"></div>
+    <div style="height:70px"></div>
+  </div>
+  <footer><div class="wrap fin">
+    <div><h4>REJEKI ALAM</h4><div style="line-height:1.7">Supplier material bangunan.</div></div>
+    <div style="align-self:flex-end">© <span class="yr"></span> Rejeki Alam</div>
+  </div></footer>
+</div>
+
+<!-- ══════════ ADMIN ══════════ -->
+<div id="vAdmin" class="dash hidden">
+  <div class="dnav"><div class="wrap navin">
+    <div class="logo" onclick="route('home')">REJEKI<i>ALAM</i></div>
+    <div class="navact" style="margin-left:auto">
+      <span class="mono" style="color:#8fa89a;margin-right:6px" id="whoami"></span>
+      <button class="btn sm out" style="color:#fff;border-color:#3a5245" onclick="route('home')">← Ke Beranda</button>
+      <button class="btn sm out" style="color:#e7c95c;border-color:#5a6b2f" onclick="adminLogout()">Keluar</button>
+    </div></div></div>
+  <div style="display:flex">
+    <div class="dside">
+      <div class="dside-h">MENU</div>
+      <a class="on" onclick="admTab('ringkasan',this)">▦ Ringkasan</a>
+      <a onclick="admTab('produk',this)">▤ Produk</a>
+      <a onclick="admTab('proyek',this)">▣ Proyek</a>
+      <a onclick="admTab('testimoni',this)">❝ Testimoni</a>
+      <a onclick="admTab('klien',this)">▩ Klien</a>
+      <a onclick="admTab('tema',this)">◐ Tema</a>
+      <a onclick="admTab('pesan',this)">✉ Pesan WhatsApp</a>
+      <a onclick="admTab('pengaturan',this)">⚙ Pengaturan</a>
+    </div>
+    <div class="dmain" id="admBody"></div>
+  </div>
+</div>
+
+<!-- ── admin login gate ─────────────────────────────────────────────────── -->
+<div id="vLogin" class="login-wrap hidden">
+  <div class="login-card">
+    <div class="logo" style="font-size:22px;justify-content:center;margin-bottom:6px">REJEKI<i>ALAM</i></div>
+    <div class="mono" style="color:var(--muted);text-align:center;margin-bottom:26px">ADMIN PANEL</div>
+    <form id="loginForm">
+      <div class="fld"><label>Username</label><input id="lg_user" autocomplete="username" placeholder="admin"></div>
+      <div class="fld"><label>Password</label><input id="lg_pass" type="password" autocomplete="current-password" placeholder="••••••••"></div>
+      <div id="lgErr" class="lg-err"></div>
+      <button class="btn full gold" type="submit" id="lgBtn" style="margin-top:6px">Masuk</button>
+    </form>
+    <button class="btn full out" style="margin-top:10px" onclick="route('home')">← Kembali ke situs</button>
+  </div>
+</div>
+
+<div class="modal" id="m"><div class="mbox" id="mBody"></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+// GANTI dengan nomor WhatsApp perusahaan (format internasional, tanpa "+" dan tanpa 0 di depan)
+const WA_NUMBER = '628xxxxxxxxx';
+
+/* ── ikon: filled dua-warna dalam piringan (bukan garis tipis) ─────────── */
+var FIL_OTHER2 = {"konfirmasi": "<rect x=\"4\" y=\"6\" width=\"16\" height=\"12\" rx=\"2\"/><path d=\"M4 10h16\"/><path d=\"M7 14h4\"/><path d=\"M15.5 13.5l1.6 1.8 3-3.4\"/>", "invoice": "<path d=\"M6 3h9l4 4v14H6z\"/><path d=\"M15 3v4h4\"/><path d=\"M9 12h6M9 15.5h6M9 8h3\"/>"};
+var FIL_OTHER = {"spesifikasi": "<path d=\"M4 20h16\"/><path d=\"M7 20V9M12 20V4M17 20v-8\"/><path d=\"M4.5 9L12 4l7.5 5\"/>", "pabrik": "<path d=\"M4 20V9l5 3.5V9l5 3.5V9l5 3.5V20z\"/><path d=\"M9 20v-4h6v4\"/>", "truk": "<path d=\"M3 16V8h9v8z\"/><path d=\"M12 10h4l3 3v3h-7z\"/><circle cx=\"7\" cy=\"17.5\" r=\"1.8\"/><circle cx=\"16\" cy=\"17.5\" r=\"1.8\"/>", "lengkap": "<path d=\"M4 7h7v7H4z\"/><path d=\"M13 7h7v7h-7z\"/><path d=\"M4 16h7v4H4z\"/><path d=\"M13 16h7v4h-7z\"/>", "harga": "<circle cx=\"12\" cy=\"12\" r=\"8\"/><path d=\"M9 9h6M9 12h6M9 15h3\"/><path d=\"M15.5 8.5l-4 6\"/>", "bantuan": "<rect x=\"4\" y=\"5\" width=\"16\" height=\"14\"/><path d=\"M8 10h8M8 14h5\"/>", "chat": "<path d=\"M4 5h16v11H9l-5 4z\"/><path d=\"M8.5 9.5h7M8.5 12.5h4\"/>", "katalog": "<rect x=\"4\" y=\"5\" width=\"16\" height=\"14\"/><path d=\"M8 5v14\"/><path d=\"M11 9h6M11 12h6M11 15h4\"/>"};
+var FIL_CAT = {"mortar": "<path d=\"M4 10h16l-2 9H6z\"/><path d=\"M8 10V6a4 4 0 0 1 8 0v4\"/>", "cat": "<rect x=\"4\" y=\"4\" width=\"16\" height=\"6\" rx=\"1\"/><path d=\"M8 10v4h9v6\"/><path d=\"M17 14v6\"/>", "aksesoris": "<path d=\"M14.5 5.5a4.5 4.5 0 0 0 5.9 5.9L14 17.8a2.6 2.6 0 1 1-3.7-3.7z\"/><path d=\"M9 4v5M6.5 6.5h5\"/>", "waterproof": "<path d=\"M12 3c3.6 4.3 6 7.6 6 10.6A6 6 0 0 1 6 13.6C6 10.6 8.4 7.3 12 3z\"/><path d=\"M9.5 14a2.5 2.5 0 0 0 2.5 2.5\"/>"};
+var FIL_PRJ = {"gedung": "<rect x=\"5\" y=\"4\" width=\"14\" height=\"16\"/><path d=\"M9 8h2M13 8h2M9 12h2M13 12h2M9 16h2M13 16h2\"/>", "perumahan": "<path d=\"M4 10l8-6 8 6\"/><path d=\"M6.5 8.5V20h11V8.5\"/><path d=\"M10.5 20v-5h3v5\"/>", "sekolah": "<path d=\"M4 9l8-5 8 5\"/><path d=\"M6 9v11h12V9\"/><path d=\"M12 4V2\"/><path d=\"M9.5 13h5M9.5 16.5h5\"/>", "pabrik": "<path d=\"M4 20V9l5 3.5V9l5 3.5V9l5 3.5V20z\"/><path d=\"M9 20v-4h6v4\"/>", "klinik": "<path d=\"M4 8h16v12H4z\"/><path d=\"M9 8V5h6v3\"/><path d=\"M12 11v6M9 14h6\"/>", "rumah": "<path d=\"M4 10.5l8-6.5 8 6.5\"/><path d=\"M6.5 9V20h11V9\"/><path d=\"M6.5 13h4M13.5 13h4M6.5 16.5h4M13.5 16.5h4\"/>"};
+var FIL_DEF = "<rect x=\"5\" y=\"5\" width=\"14\" height=\"14\"/><path d=\"M5 9.5h14M9.5 5v14\"/>";
+
+function svgFill(inner, size){
+  size = size || 24;
+  return '<svg class="ic-fill" width="'+size+'" height="'+size+'" viewBox="0 0 24 24" '+
+    'fill="none" aria-hidden="true" focusable="false">'+
+    '<circle cx="12" cy="12" r="11" fill="var(--green-soft)"/>'+
+    '<circle cx="12" cy="12" r="11" stroke="var(--green)" stroke-opacity=".28" stroke-width="1"/>'+
+    '<g fill="none" stroke="var(--green-dark)" stroke-width="1.7" stroke-linecap="round" '+
+    'stroke-linejoin="round">'+inner+'</g></svg>';
+}
+function fillKey(t){
+  t = String(t||'');
+  if (/perumahan|cluster/i.test(t)) return 'perumahan';
+  if (/sekolah|smp/i.test(t))      return 'sekolah';
+  if (/pabrik|gudang/i.test(t))   return 'pabrik';
+  if (/klinik|apotek/i.test(t))   return 'klinik';
+  if (/rumah|owner/i.test(t))     return 'rumah';
+  return null;
+}
+function fillCat(c, size){ return svgFill(FIL_CAT[c] || FIL_DEF, size); }
+function fillOther(k, size){ return svgFill(FIL_OTHER[k] || FIL_DEF, size); }
+function fillStep(k, size){ return svgFill(FIL_OTHER2[k] || FIL_OTHER[k] || FIL_DEF, size); }
+function fillProj(title, size){
+  var k = fillKey(title);
+  return svgFill(FIL_PRJ[k] || FIL_DEF, size);
+}
+
+let CAT='Semua', PRODUCTS=[];
+
+// ── theme ──────────────────────────────────────────────────────────────────
+const THEMES = { hijau:'Hijau & Emas', putih:'Putih & Teal', biru:'Biru & Emas' };
+let THEME = 'hijau';
+
+function setTheme(t, remember){
+  if(!THEMES[t]) t='hijau';
+  THEME=t;
+  document.documentElement.setAttribute('data-theme',t);
+  // only an explicit user choice is stored locally; the admin's choice is not,
+  // so a visitor without a preference follows whatever the admin sets.
+  if(remember){ try{ localStorage.setItem('rj_theme',t); }catch(e){} }
+}
+
+const rp=n=>'Rp '+Number(n).toLocaleString('id-ID');
+const $=id=>document.getElementById(id);
+const API_BASE=(()=>{const m=window.location.pathname.match(/^(.*\/katalog)\//);return m?m[1]:'/katalog';})();
+
+async function api(p,o={}){
+  // callers pass plain objects; fetch needs a JSON string, so serialise here
+  const opt={...o};
+  if(opt.body && typeof opt.body!=='string') opt.body=JSON.stringify(opt.body);
+  const r=await fetch(API_BASE+'/api'+p,{headers:{'Content-Type':'application/json'},...opt});
+  if(!r.ok){const e=await r.json().catch(()=>({error:'Gagal'}));throw new Error(e.error||'Gagal');}
+  return r.json();}
+
+function toast(m){const t=$('toast');t.textContent=m;t.classList.add('on');
+  setTimeout(()=>t.classList.remove('on'),2400);}
+
+const ADMIN_KEY='rj_admin';
+function isAdmin(){return sessionStorage.getItem(ADMIN_KEY)==='1';}
+function showLogin(){ $('vLogin').classList.remove('hidden'); setTimeout(()=>$('lg_user').focus(),120); }
+function hideLogin(){ $('vLogin').classList.add('hidden'); }
+
+function route(r){
+  if(r==='admin'&&!isAdmin()){ showLogin(); return; }
+  hideLogin();
+  $('vHome').classList.toggle('hidden', r!=='home');
+  $('vProduk').classList.toggle('hidden', r!=='produk');
+  $('vAdmin').classList.toggle('hidden', r!=='admin');
+  $('navMain').classList.toggle('hidden', r==='admin');
+  document.querySelectorAll('#navLinks a').forEach(a=>a.classList.toggle('on', a.dataset.r===r));
+  if(r==='produk') load();
+  if(r==='home') loadContent();
+  if(r==='admin') admTab('ringkasan');
+  window.scrollTo(0,0);
+  history.replaceState(null,'','#'+r);
+}
+
+function adminLogout(){ sessionStorage.removeItem(ADMIN_KEY); hideLogin();
+  $('vAdmin').classList.add('hidden'); $('vHome').classList.remove('hidden');
+  $('navMain').classList.remove('hidden'); toast('Anda telah keluar dari panel admin'); }
+
+$('loginForm').addEventListener('submit', async e=>{
+  e.preventDefault();
+  const btn=$('lgBtn'); btn.disabled=true; btn.textContent='Memeriksa…';
+  $('lgErr').textContent='';
+  try{
+    const r=await api('/admin/login',{method:'POST',body:JSON.stringify({
+      username:$('lg_user').value.trim(), password:$('lg_pass').value})});
+    if(!r.ok){ $('lgErr').textContent=r.error||'Gagal masuk'; return; }
+    sessionStorage.setItem(ADMIN_KEY,'1');
+    $('lg_pass').value='';
+    $('whoami').textContent='· '+(r.name||'Administrator');
+    hideLogin(); route('admin');
+  }catch(err){ $('lgErr').textContent=err.message; }
+  finally{ btn.disabled=false; btn.textContent='Masuk'; }
+});
+
+function waText(msg){return 'https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(msg);}
+function waGeneral(){
+  window.open(waText('Halo Rejeki Alam, saya ingin bertanya tentang material yang tersedia.'),'_blank');
+}
+
+// ── catalog ────────────────────────────────────────────────────────────────
+async function load(){
+  try{
+    const q=$('q').value.trim();
+    PRODUCTS=await api('/products?category='+encodeURIComponent(CAT)+
+      '&sort='+encodeURIComponent($('sort').value)+(q?'&q='+encodeURIComponent(q):''));
+    $('cnt').textContent=PRODUCTS.length+' produk tersedia';
+    $('grid').innerHTML=PRODUCTS.map(p=>{
+      const low=p.stock<10;
+      const badge=p.badge?`<span class="pill ${p.badge.replace(/\s/g,'')}">${p.badge}</span>`:'';
+      const sold=p.stock<1;
+      return `<div class="card">
+        <div class="thumb" onclick="detail(${p.id})">${fillCat(p.category, 34)}${badge}</div>
+        <div class="cbody">
+          <div class="ctitle">${p.name}</div>
+          <div class="cdesc">${p.description}</div>
+          <div class="cfoot">
+            <div class="price">${p.compare_price?`<s>${rp(p.compare_price)}</s>`:''}${rp(p.price)}
+              <span class="per">/ ${p.unit||'sak'}</span></div>
+          </div>
+          <button class="btn wa sm full" ${sold?'disabled':''} onclick="orderWA(${p.id})">
+            ${sold?'Stok Habis':'Pesan via WhatsApp'}</button>
+          <div class="stock ${low?'lowc':''}">${sold?'Stok habis':low?'Sisa '+p.stock+' unit':'Stok tersedia: '+p.stock}</div>
+        </div></div>`;}).join('') ||
+      '<div class="empty" style="grid-column:1/-1">Produk tidak ditemukan.</div>';
+  }catch(e){toast(e.message);}
+}
+
+function setCat(c,el){CAT=c;document.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));
+  el.classList.add('on');load();}
+
+function detail(id){const p=PRODUCTS.find(x=>x.id===id);if(!p)return;
+  $('mBody').innerHTML=`<div style="display:flex;justify-content:space-between;margin-bottom:16px">
+      <span class="mono" style="color:var(--muted)">${p.category}</span>
+      <button class="btn sm out" onclick="closeM()">Tutup</button></div>
+    <div style="height:140px;background:var(--cream);border:1px solid var(--oat);border-radius:var(--rc);
+         display:grid;place-items:center;margin-bottom:18px">${fillCat(p.category, 76)}</div>
+    <h3 style="font-size:22px;font-weight:500;letter-spacing:-.6px">${p.name}</h3>
+    <p style="color:var(--muted);font-size:14px;margin-top:9px;line-height:1.55">${p.description}</p>
+    <div style="margin:20px 0"><span style="font-size:26px;font-weight:600">${rp(p.price)}</span>
+      <span class="per" style="font-size:15px">/ ${p.unit||'sak'}</span>
+      ${p.compare_price?`<s style="color:var(--muted);font-weight:300;margin-left:9px">${rp(p.compare_price)}</s>`:''}</div>
+    <div style="font-size:13px;color:var(--muted);margin-bottom:18px">Stok tersedia: ${p.stock} unit</div>
+    <button class="btn wa full" ${p.stock<1?'disabled':''} onclick="orderWA(${p.id})">
+      ${p.stock<1?'Stok Habis':'Pesan via WhatsApp'}</button>`;
+  $('m').classList.add('on');}
+
+function orderWA(id){
+  const p=PRODUCTS.find(x=>x.id===id); if(!p)return;
+  const msg='Halo Rejeki Alam, saya ingin memesan:\n\n*'+p.name+'*\nHarga: '+rp(p.price)+' / '+(p.unit||'sak')+
+    (p.compare_price?' (dari '+rp(p.compare_price)+')':'')+
+    '\n\nMohon informasi ketersediaan stok dan pengiriman. Terima kasih!';
+  window.open(waText(msg),'_blank');
+}
+
+function closeM(){$('m').classList.remove('on');}
+$('q').addEventListener('input',()=>{clearTimeout(window._t);window._t=setTimeout(load,280);});
+
+
+// ── editable content (projects / testimonials / clients) ───────────────────
+function esc(s){ return String(s==null?'':s)
+  .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+async function loadContent(){
+  try{
+    const c = await api('/content');
+    // admin picks the theme; apply whatever is stored server-side unless this
+    // visitor already picked one locally (their explicit choice wins)
+    if(c.theme){
+      let local=null; try{ local=localStorage.getItem('rj_theme'); }catch(e){}
+      if(!local) setTheme(c.theme);
+    }
+
+    $('projGrid').innerHTML = (c.projects||[]).map(p=>`
+      <article class="pj">
+        <div class="pj-ic">${fillProj(p.title, 26)}</div>
+        <div class="pj-body">
+          <h3>${esc(p.title)}${p.location?' — '+esc(p.location):''}</h3>
+          <div class="pj-meta">
+            ${p.year?`<span>${esc(p.year)}</span>`:''}
+            ${p.material?`<span>${esc(p.material)}</span>`:''}
+            ${p.scale?`<span>${esc(p.scale)}</span>`:''}
+          </div>
+          ${p.body?`<p>${esc(p.body)}</p>`:''}
+        </div>
+      </article>`).join('') ||
+      '<div class="empty" style="grid-column:1/-1">Belum ada proyek.</div>';
+
+    $('tmGrid').innerHTML = (c.testimonials||[]).map(t=>`
+      <blockquote class="tq">
+        <p>&ldquo;${esc(t.quote)}&rdquo;</p>
+        <footer><strong>${esc(t.name)}</strong><span>${esc(t.role)}</span></footer>
+      </blockquote>`).join('') ||
+      '<div class="empty" style="grid-column:1/-1">Belum ada testimoni.</div>';
+
+    $('logosGrid').innerHTML = (c.clients||[]).map(c2=>`<span>${esc(c2.name)}</span>`).join('') ||
+      '<div class="empty">Belum ada data klien.</div>';
+  }catch(e){
+    $('projGrid').innerHTML = '<div class="empty" style="grid-column:1/-1">Gagal memuat data.</div>';
+  }
+}
+
+
+// ── editable content: projects, testimonials, clients, theme ───────────────
+async function admContent(tab, titles, empty, formHtml, rows, cols, saveFn, editFn, delPath){
+  const body = rows.length ? rows.map(cols).join('') :
+    `<div class="dsub" style="padding:26px;text-align:center;border:1px dashed var(--oat);border-radius:var(--rc)">Belum ada data. Tambah lewat form di bawah.</div>`;
+  $('admBody').innerHTML =
+    admHead(titles[0], titles[1], '<button class="btn" onclick="'+saveFn+'()">+ Tambah</button>') +
+    body + '<div class="phead" style="margin-top:28px;padding-top:20px;border-top:1px solid var(--oat)">' +
+    '<div class="dtitle" style="font-size:16px">Tambah ' + titles[2] + '</div></div>' + formHtml;
+}
+
+let PROJ_CACHE=[], TESTI_CACHE=[], CLI_CACHE=[];
+
+async function admProyek(){
+  const c = await api('/content'); PROJ_CACHE = c.projects;
+  const cols = r => `<div style="border:1px solid var(--oat);border-radius:var(--rc);padding:14px;margin-bottom:10px">
+    <div style="display:flex;gap:12px;align-items:flex-start">
+      <div style="flex:0 0 auto">${fillProj(r.title, 26)}</div>
+      <div style="flex:1;min-width:0">
+        <strong style="font-size:14.5px">${esc(r.title)}</strong>
+        <div style="font-size:12px;color:var(--muted);margin-top:3px">${[r.location,r.year,r.material,r.scale].filter(Boolean).map(esc).join(' · ')}</div>
+      </div>
+      <div style="display:flex;gap:6px;flex-shrink:0;align-items:center">
+        <input class="in" style="width:62px;min-height:34px;padding:5px 8px;text-align:center"
+               value="${r.sort_order}" title="Urutan" onchange="setOrder('projects',${r.id},this.value)">
+        <button class="btn" onclick="editProject(${r.id})">Edit</button>
+        <button class="btn danger" onclick="delContent('/admin/projects/${r.id}','proyek','Proyek')">Hapus</button>
+      </div></div></div>`;
+  admContent('proyek', ['Portofolio Proyek','Tampil di beranda sebagai kartu proyek','proyek'],
+    '', `<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <input class="in" id="np_title" placeholder="Judul proyek">
+      <input class="in" id="np_location" placeholder="Lokasi">
+      <input class="in" id="np_year" placeholder="Tahun" value="${new Date().getFullYear()}">
+      <input class="in" id="np_material" placeholder="Kategori material">
+      <input class="in" id="np_scale" placeholder="Volume / skala">
+      <input class="in" id="np_icon" placeholder="Kode ikon (opsional)">
+      <textarea class="in" id="np_body" rows="4" placeholder="Deskripsi singkat" style="grid-column:1/-1"></textarea>
+    </div>
+    <button class="btn" onclick="addProject()" style="margin-top:12px">Simpan Proyek</button>`,
+    c.projects, cols);
+}
+
+async function admTestimoni(){
+  const c = await api('/content'); TESTI_CACHE = c.testimonials;
+  const cols = r => `<div style="border:1px solid var(--oat);border-radius:var(--rc);padding:14px;margin-bottom:10px">
+    <div style="display:flex;gap:12px;align-items:flex-start">
+      <div style="flex:1;min-width:0">
+        <em style="font-size:13.5px;color:var(--black60)">&ldquo;${esc(r.quote)}&rdquo;</em>
+        <div style="font-size:12px;color:var(--muted);margin-top:6px"><strong>${esc(r.name)}</strong> · ${esc(r.role)}</div>
+      </div>
+      <div style="display:flex;gap:6px;flex-shrink:0">
+        <button class="btn" onclick="editTesti(${r.id})">Edit</button>
+        <button class="btn danger" onclick="delContent('/admin/testimonials/${r.id}','testimoni','Testimoni')">Hapus</button>
+      </div></div></div>`;
+  admContent('testimoni', ['Testimoni Pelanggan','Tampil di beranda sebagai kutipan','testimoni'],
+    '', `<textarea class="in" id="nt_quote" rows="4" placeholder="Kutipan pelanggan"></textarea>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+      <input class="in" id="nt_name" placeholder="Nama">
+      <input class="in" id="nt_role" placeholder="Peran / perusahaan">
+    </div>
+    <button class="btn" onclick="addTesti()" style="margin-top:12px">Simpan Testimoni</button>`,
+    c.testimonials, cols);
+}
+
+async function admKlien(){
+  const c = await api('/content'); CLI_CACHE = c.clients;
+  const cols = r => `<div style="border:1px solid var(--oat);border-radius:var(--rc);padding:12px 14px;margin-bottom:8px;
+    display:flex;justify-content:space-between;align-items:center;gap:10px">
+    <strong style="font-size:14px">${esc(r.name)}</strong>
+    <button class="btn danger" onclick="delContent('/admin/clients/${r.id}','klien','Klien')">Hapus</button></div>`;
+  admContent('klien', ['Klien & Mitra','Tampil di beranda sebagai logo/nama perusahaan','klien'],
+    '', `<input class="in" id="nc_name" placeholder="Nama perusahaan">
+    <button class="btn" onclick="addClient()" style="margin-top:12px">Simpan Klien</button>`,
+    c.clients, cols);
+}
+
+async function addProject(){
+  const b = { title:$('np_title').value, location:$('np_location').value, year:$('np_year').value,
+              material:$('np_material').value, scale:$('np_scale').value, icon:$('np_icon').value, body:$('np_body').value };
+  if(!b.title) return alert('Judul proyek wajib diisi');
+  await api('/admin/projects',{method:'POST',body:b}); alert('Proyek ditambahkan'); admProyek(); loadContent();
+}
+async function addTesti(){
+  const b = { quote:$('nt_quote').value, name:$('nt_name').value, role:$('nt_role').value };
+  if(!b.quote||!b.name) return alert('Kutipan dan nama wajib diisi');
+  await api('/admin/testimonials',{method:'POST',body:b}); alert('Testimoni ditambahkan'); admTestimoni(); loadContent();
+}
+async function addClient(){
+  const n = $('nc_name').value;
+  if(!n) return alert('Nama klien wajib diisi');
+  await api('/admin/clients',{method:'POST',body:{name:n}}); alert('Klien ditambahkan'); admKlien(); loadContent();
+}
+async function setOrder(table, id, val){
+  await api('/admin/'+table+'/'+id,{method:'PUT',body:{sort_order:parseInt(val)||0}});
+  toast('Urutan disimpan'); loadContent();
+}
+
+async function delContent(path, tab, label){
+  if(!confirm('Hapus ' + label + ' ini dari situs publik?')) return;
+  await api(path,{method:'DELETE'}); alert(label + ' dihapus');
+  ({proyek:admProyek, testimoni:admTestimoni, klien:admKlien})[tab](); loadContent();
+}
+function editProject(id){
+  const r = PROJ_CACHE.find(x=>x.id==id); if(!r) return;
+  const t = prompt('Judul proyek', r.title); if(t===null) return;
+  api('/admin/projects/'+id,{method:'PUT',body:{...r,title:t}}).then(()=>{admProyek(); loadContent();});
+}
+function editTesti(id){
+  const r = TESTI_CACHE.find(x=>x.id==id); if(!r) return;
+  const q = prompt('Kutipan', r.quote); if(q===null) return;
+  api('/admin/testimonials/'+id,{method:'PUT',body:{...r,quote:q}}).then(()=>{admTestimoni(); loadContent();});
+}
+
+async function admTema(){
+  const r = await api('/admin/theme');
+  const cur = r.theme || 'hijau';
+  const sw = { hijau:['#1f7a4d','#c9a227','#f7f9f5'], putih:['#0f766e','#b8860b','#ffffff'], biru:['#1e5f8c','#c9922e','#f4f8fc'] };
+  $('admBody').innerHTML = admHead('Tema Tampilan','Dipakai seluruh situs publik — berlaku untuk semua pengunjung',
+    '') + `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">` +
+    Object.entries(THEMES).map(([k,n])=>{
+      const c = sw[k];
+      return `<button onclick="pickTheme('${k}')" style="border:2px solid ${k===cur?'var(--green)':'var(--oat)'};
+        border-radius:var(--rc);overflow:hidden;text-align:left;background:var(--white);cursor:pointer">
+        <div style="height:72px;display:flex">
+          <div style="flex:1;background:${c[0]}"></div>
+          <div style="flex:1;background:${c[1]}"></div>
+          <div style="flex:1;background:${c[2]};border-left:1px solid #eee"></div>
+        </div>
+        <div style="padding:13px 15px;display:flex;justify-content:space-between;align-items:center">
+          <strong style="font-size:14px">${n}</strong>
+          ${k===cur?'<span style="font-size:10.5px;font-weight:700;color:var(--green);letter-spacing:.08em">AKTIF</span>':''}
+        </div></button>`;
+    }).join('') + `</div>
+    <div class="dsub" style="margin-top:18px">Perubahan tema berlaku untuk semua pengunjung, bukan hanya admin.</div>`;
+}
+async function pickTheme(t){
+  await api('/admin/theme',{method:'POST',body:{theme:t}});
+  setTheme(t,true); admTema();
+}
+
+// ── admin ──────────────────────────────────────────────────────────────────
+function admTab(t,el){
+  document.querySelectorAll('.dside a').forEach(a=>a.classList.remove('on'));
+  if(el)el.classList.add('on');
+  if(t==='ringkasan')admRingkasan();
+  else if(t==='produk')admProduk();
+  else if(t==='pesan')admPesan();
+  else if(t==='proyek')admProyek();
+  else if(t==='testimoni')admTestimoni();
+  else if(t==='klien')admKlien();
+  else if(t==='tema')admTema();
+  else admPengaturan();
+}
+
+function admHead(title,sub,action){
+  return '<div class="phead"><div><div class="dtitle">'+title+'</div>'+
+    '<div class="dsub">'+sub+'</div></div>'+(action||'')+'</div>';
+}
+
+async function admRingkasan(){
+  const s=await api('/admin/stats');
+  const st=s.byStatus.map(x=>'<span class="st '+x.status+'" style="margin-right:6px">'+
+    x.status+' · '+x.c+'</span>').join(' ') || '<span class="dsub">Belum ada pesanan tercatat.</span>';
+  const totalCat=s.byCategory.reduce((a,c)=>a+c.c,0)||1;
+  const cats=s.byCategory.map(c=>({n:c.category,v:c.c})).sort((a,b)=>b.v-a.v);
+  const max=Math.max(...cats.map(c=>c.v),1);
+
+  const bars=['Sen','Sel','Rab','Kam','Jum','Sab','Min']
+    .map((d,i)=>{const h=[62,78,55,88,96,74,83][i];
+      return '<div class="bar" style="height:'+h+'%"><span>'+d+'</span></div>';}).join('');
+
+  $('admBody').innerHTML=
+    admHead('Ringkasan','Performa toko secara real-time',
+            '<button class="btn gold" onclick="admTab(\'produk\')">+ Tambah Produk</button>')+
+    '<div class="kpis">'+
+      '<div class="kpi"><div class="lb">Omzet</div><div class="vl">'+rp(s.revenue)+'</div>'+
+        '<div class="hint">Dari pesanan tercatat</div></div>'+
+      '<div class="kpi"><div class="lb">Pesanan</div><div class="vl">'+s.orders+'</div>'+
+        '<div class="hint">Total transaksi</div></div>'+
+      '<div class="kpi g"><div class="lb">Produk Aktif</div><div class="vl">'+s.products+'</div>'+
+        '<div class="hint">Tampil di katalog</div></div>'+
+      '<div class="kpi"><div class="lb">Stok Menipis</div><div class="vl" style="color:'+
+        (s.lowStock?'var(--red)':'var(--green-dark)')+'">'+s.lowStock+'</div>'+
+        '<div class="hint">Sisa di bawah 10 unit</div></div></div>'+
+    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">'+
+      '<div class="panel"><h3>Penjualan 7 Hari Terakhir</h3>'+
+        '<div class="bars">'+bars+'</div><div style="height:16px"></div>'+
+        '<div class="dsub" style="margin-top:14px">Data ilustratif — hubungkan ke data penjualan '+
+        'sesungguhnya bila diperlukan.</div></div>'+
+      '<div class="panel"><h3>Produk per Kategori</h3>'+
+        (cats.length?cats.map(c=>'<div style="margin-bottom:13px">'+
+          '<div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px">'+
+          '<span>'+c.n+'</span><strong>'+c.v+'</strong></div>'+
+          '<div style="height:6px;background:#eef1ee;border-radius:3px;overflow:hidden">'+
+          '<div style="height:100%;background:var(--gold);width:'+Math.round(c.v/max*100)+'%"></div>'+
+          '</div></div>').join(''):'<div class="dsub">Belum ada produk.</div>')+
+      '</div></div>'+
+    '<div class="panel"><h3>Status Pesanan</h3>'+st+
+      '<div class="dsub" style="margin-top:14px;line-height:1.6">Pemesanan masuk lewat WhatsApp, '+
+      'jadi angka di sini hanya mencatat pesanan yang sudah dikonfirmasi manual.</div></div>';
+}
+
+async function admProduk(){
+  const ps=await api('/products');
+  $('admBody').innerHTML=
+    admHead('Produk',ps.length+' produk aktif di katalog',
+            '<button class="btn gold" onclick="formProduk(null)">+ Tambah Produk</button>')+
+    '<div class="panel" style="padding:0;overflow-x:auto"><table>'+
+    '<thead><tr><th>Produk</th><th>Kategori</th><th>Harga</th><th>Stok</th><th>Badge</th>'+
+    '<th style="text-align:right">Aksi</th></tr></thead><tbody>'+
+    (ps.length?ps.map(p=>
+      '<tr><td><div style="display:flex;align-items:center;gap:11px">'+
+      '<div style="width:36px;height:36px;background:var(--green-soft);border:1px solid #cfe3d6;'+
+      'border-radius:6px;display:grid;place-items:center;font-size:16px">'+p.icon+'</div>'+
+      '<div><div style="font-weight:600">'+p.name+'</div>'+
+      '<div style="font-size:11px;color:var(--muted);font-family:ui-monospace,monospace">'+p.slug+'</div>'+
+      '</div></div></td>'+
+      '<td>'+p.category+'</td>'+
+      '<td><strong style="color:var(--green-dark)">'+rp(p.price)+'</strong>'+
+      (p.compare_price?'<div style="font-size:11px;color:var(--muted);text-decoration:line-through">'+
+        rp(p.compare_price)+'</div>':'')+'</td>'+
+      '<td>'+(p.stock<10?'<span class="st MENUNGGU" style="color:var(--red);background:#fbeae8">'+
+        p.stock+'</span>':p.stock)+'</td>'+
+      '<td>'+(p.badge?'<span class="st DIPROSES">'+p.badge+'</span>':'—')+'</td>'+
+      '<td style="text-align:right;white-space:nowrap">'+
+      '<button class="btn sm out" onclick=\'formProduk('+JSON.stringify(p)+')\'>Edit</button> '+
+      '<button class="btn sm out" style="color:var(--red);border-color:var(--red)" '+
+      'onclick="hapusProduk('+p.id+')">Hapus</button></td></tr>').join('')
+      :'<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:36px">'+
+       'Belum ada produk. Klik "+ Tambah Produk" untuk mulai.</td></tr>')+
+    '</tbody></table></div>';
+}
+
+function formProduk(p){
+  const v=p||{name:'',description:'',category:'Aksesoris',price:'',compare_price:'',stock:'',icon:'',badge:''};
+  $('mBody').innerHTML='<div style="display:flex;justify-content:space-between;margin-bottom:20px">'+
+    '<h3 style="font-size:19px;font-weight:600;color:var(--ink)">'+(p?'Edit':'Tambah')+' Produk</h3>'+
+    '<button class="btn sm out" onclick="closeM()">Tutup</button></div>'+
+    '<div class="row2">'+
+    '<div class="fld" style="grid-column:1/-1"><label>Nama Produk *</label>'+
+      '<input id="f_name" value="'+v.name+'" placeholder="Contoh: Semen Portland 40 kg"></div>'+
+    '<div class="fld"><label>Kategori</label><select id="f_cat">'+
+      ['Aksesoris','Elektronik','Perlengkapan','Mortar','Cat','Waterproofing','Umum']
+        .map(c=>'<option '+(c===v.category?'selected':'')+'>'+c+'</option>').join('')+'</select></div>'+
+    '<div class="fld"><label>Ikon (emoji)</label><input id="f_icon" value="'+v.icon+'" maxlength="4"></div>'+
+    '<div class="fld"><label>Harga (Rp) *</label><input id="f_price" type="number" value="'+v.price+'" placeholder="65000"></div>'+
+    '<div class="fld"><label>Harga Coret (Rp)</label><input id="f_cmp" type="number" value="'+(v.compare_price||'')+'"></div>'+
+    '<div class="fld"><label>Stok</label><input id="f_stock" type="number" value="'+v.stock+'"></div>'+
+    '<div class="fld"><label>Satuan</label><select id="f_unit">'+
+      ['sak','dus','kg','liter','pcs','roll','meter'].map(u=>'<option '+
+      (u===(v.unit||'sak')?'selected':'')+'>'+u+'</option>').join('')+'</select></div>'+
+    '<div class="fld"><label>Badge</label><select id="f_badge"><option value="">—</option>'+
+      ['Baru','Terlaris','Stok Menipis'].map(b=>'<option '+(b===v.badge?'selected':'')+'>'+b+'</option>').join('')+
+      '</select></div>'+
+    '<div class="fld" style="grid-column:1/-1"><label>Deskripsi</label>'+
+      '<textarea id="f_desc" rows="3" placeholder="Spesifikasi, takaran, standar…">'+
+      (v.description||'')+'</textarea></div></div>'+
+    '<div style="display:flex;gap:10px;margin-top:6px">'+
+    '<button class="btn out" style="flex:1" onclick="closeM()">Batal</button>'+
+    '<button class="btn gold" style="flex:2" onclick="simpanProduk('+(p?p.id:'null')+')">Simpan Produk</button>'+
+    '</div>';
+  $('m').classList.add('on');
+}
+
+async function simpanProduk(id){
+  const body={name:$('f_name').value.trim(),category:$('f_cat').value,icon:$('f_icon').value.trim(),
+    unit:$('f_unit').value,price:$('f_price').value,compare_price:$('f_cmp').value,stock:$('f_stock').value,
+    badge:$('f_badge').value,description:$('f_desc').value.trim()};
+  if(!body.name||!body.price){toast('Nama dan harga wajib diisi');return;}
+  try{ await api(id?'/admin/products/'+id:'/admin/products',{method:id?'PUT':'POST',body:JSON.stringify(body)});
+    closeM();toast('✓ Produk disimpan');admProduk();
+  }catch(e){toast(e.message);}
+}
+
+async function hapusProduk(id){ if(!confirm('Hapus produk ini dari katalog?'))return;
+  try{ await api('/admin/products/'+id,{method:'DELETE'});toast('✓ Produk dihapus');admProduk();}catch(e){toast(e.message);}}
+
+function admPesan(){
+  $('admBody').innerHTML=
+    admHead('Pesan WhatsApp','Konfirmasi pesanan yang masuk dari pelanggan')+
+    '<div class="panel"><h3>Nomor WhatsApp perusahaan</h3>'+
+    '<div class="dsub" style="margin-bottom:14px">Ganti variabel <code>WA_NUMBER</code> di '+
+    '<code>public/index.html</code> bila nomor berubah.</div>'+
+    '<div style="font-family:ui-monospace,monospace;font-size:16px;color:var(--green-dark);'+
+    'background:var(--green-soft);padding:14px 16px;border-radius:8px;border:1px solid #cfe3d6">'+
+    WA_NUMBER+'</div>'+
+    '<button class="btn wa" style="margin-top:16px" onclick="waGeneral()">Buka Percakapan</button></div>'+
+    '<div class="panel"><h3>Pesanan Tercatat</h3>'+
+    '<div class="dsub" style="line-height:1.7">Karena pemesanan lewat WhatsApp, pesan tidak masuk '+
+    'database secara otomatis. Catat pesanan setelah pelanggan mengonfirmasi lewat chat, lalu '+
+    'perbarui stok di menu Produk.</div></div>'+
+    '<div class="panel"><h3>Contoh pesan otomatis</h3>'+
+    '<div style="background:#f7f9f5;border:1px solid var(--oat);border-radius:8px;padding:16px;'+
+    'font-size:13px;line-height:1.7;white-space:pre-wrap;color:var(--black60)">'+
+    'Halo Rejeki Alam, saya ingin memesan:\n\n*'+
+    (PRODUCTS[0]?PRODUCTS[0].name:'Nama Produk')+'*\nHarga: '+rp(PRODUCTS[0]?PRODUCTS[0].price:0)+
+    '\n\nMohon informasi ketersediaan stok dan pengiriman. Terima kasih!'+
+    '</div></div>';
+}
+
+function admPengaturan(){
+  $('admBody').innerHTML=
+    admHead('Pengaturan','Konfigurasi toko dan akun admin')+
+    '<div class="panel"><h3>Informasi Toko</h3>'+
+    '<div class="row2">'+
+    '<div class="fld"><label>Nama Toko</label><input value="Rejeki Alam"></div>'+
+    '<div class="fld"><label>Nomor WhatsApp</label><input value="'+WA_NUMBER+'"></div>'+
+    '<div class="fld"><label>Email</label><input value="info@rejekialam.co.id"></div>'+
+    '<div class="fld"><label>Alamat</label><input value="—"></div></div>'+
+    '<button class="btn gold" onclick="toast(\'Fitur simpan pengaturan belum diaktifkan\')">'+
+    'Simpan Pengaturan</button>'+
+    '<div class="dsub" style="margin-top:12px">Halaman ini untuk showcase — penyimpanan belum '+
+    'terhubung ke database.</div></div>'+
+    '<div class="panel"><h3>Sesi Admin</h3>'+
+    '<div class="dsub">Anda masuk sebagai <strong>Administrator</strong>. Sesi berakhir saat '+
+    'tab browser ditutup atau Anda menekan tombol Keluar.</div>'+
+    '<button class="btn out" style="margin-top:14px;color:var(--red);border-color:var(--red)" '+
+    'onclick="adminLogout()">Keluar dari Panel</button></div>';
+}
+
+try{ var saved=localStorage.getItem('rj_theme'); if(saved && THEMES[saved]) document.documentElement.setAttribute('data-theme',saved); }catch(e){}
+document.querySelectorAll('.yr').forEach(e=>e.textContent=new Date().getFullYear());
+loadContent();
+if(location.hash==='#produk')route('produk');
+</script>
+</body>
+</html>
