@@ -575,6 +575,20 @@ footer{border-top:1px solid var(--line);background:var(--bg-2);margin-top:0}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;transition-duration:.01ms !important}}
 .fade{animation:fd .25s ease}
 @keyframes fd{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+
+/* ── tap targets: 44px hit area on touch, visual size unchanged ─────── */
+@media(pointer:coarse){
+  a,button,[role=button],input,select,textarea{
+    min-height:44px;
+  }
+  a,button,[role=button]{
+    display:inline-flex;align-items:center;justify-content:center;
+  }
+  /* keep full-bleed media and cards from growing a hit area */
+  .cat,.tile,.pcard,.cat-tile,.tile-1,.tile-2,.tile-3,
+  .cicard,.prod-card,.cat-item,.pm-card{min-height:0}
+  .cat>*,.tile>*{min-height:0}
+}
 </style>
 </head>
 <body>

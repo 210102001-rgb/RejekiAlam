@@ -399,6 +399,20 @@ table.tbl tr:last-child td{border-bottom:0}
   .citem .ci{width:46px;height:46px}
   .plus{display:none}
 }
+
+/* ── tap targets: 44px hit area on touch, visual size unchanged ─────── */
+@media(pointer:coarse){
+  a,button,[role=button],input,select,textarea{
+    min-height:44px;
+  }
+  a,button,[role=button]{
+    display:inline-flex;align-items:center;justify-content:center;
+  }
+  /* keep full-bleed media and cards from growing a hit area */
+  .cat,.tile,.pcard,.cat-tile,.tile-1,.tile-2,.tile-3,
+  .cicard,.prod-card,.cat-item,.pm-card{min-height:0}
+  .cat>*,.tile>*{min-height:0}
+}
 </style>
 </head>
 <body>
