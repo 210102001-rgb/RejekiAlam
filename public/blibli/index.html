@@ -11,22 +11,22 @@
    Design tokens
    ============================================================ */
 :root{
-  --blue:#1F4FD8;
-  --blue-dk:#0B2A7A;
-  --blue-dkr:#081F57;
-  --blue-soft:#EAF0FF;
-  --blue-line:#C9D8FF;
-  --yellow:#F5A524;
+  --blue:#14684A;
+  --blue-dk:#0E5439;
+  --blue-dkr:#0E5439;
+  --blue-soft:#E9F4EE;
+  --blue-line:#E6E1D6;
+  --yellow:#C08A2E;
   --yellow-soft:#FFF4DF;
   --wa:#25D366;
-  --ink:#14181F;
-  --ink-2:#4A5462;
-  --ink-3:#7C8797;
-  --line:#E3E7EE;
-  --line-2:#EFF2F7;
+  --ink:#14180F;
+  --ink-2:#6B6659;
+  --ink-3:#6B6659;
+  --line:#E6E1D6;
+  --line-2:#E6E1D6;
   --bg:#FFFFFF;
-  --bg-soft:#F5F7FB;
-  --ok:#137A4B;
+  --bg-soft:#F4FAF6;
+  --ok:#14684A;
   --danger:#C62A2A;
   --r-s:8px;
   --r-m:10px;
@@ -103,7 +103,7 @@ h1,h2,h3,h4{margin:0;line-height:1.25;letter-spacing:-.01em}
 .dummy-inner svg{flex:none;margin-top:1px;color:#B8791A}
 .dummy-inner b{color:#5A3D02}
 .dummy-tag{
-  flex:none;background:#B8791A;color:#fff;border-radius:4px;
+  flex:none;background:#B8791A;color:#3A2A08;border-radius:4px;
   padding:1px 7px;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
 }
 
@@ -124,7 +124,7 @@ h1,h2,h3,h4{margin:0;line-height:1.25;letter-spacing:-.01em}
 }
 .util-links a:hover{background:rgba(255,255,255,.1);color:#fff}
 .util-links svg{opacity:.85}
-.util-right{display:flex;align-items:center;gap:8px;color:#9FB3E6;white-space:nowrap}
+.util-right{display:flex;align-items:center;gap:8px;color:#B8D4C6;white-space:nowrap}
 .util-right .u-hide{display:none}
 @media (min-width:900px){ .util-right .u-hide{display:inline} }
 .util-div{width:1px;height:12px;background:rgba(255,255,255,.18)}
@@ -145,7 +145,7 @@ h1,h2,h3,h4{margin:0;line-height:1.25;letter-spacing:-.01em}
 }
 .brand-txt{min-width:0}
 .brand-name{display:block;font-size:17px;font-weight:800;letter-spacing:-.02em;line-height:1.1;white-space:nowrap}
-.brand-sub{display:block;font-size:10.5px;color:#9FB3E6;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.brand-sub{display:block;font-size:10.5px;color:#B8D4C6;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
 @media (max-width:400px){ .brand-mark{width:34px;height:34px} .brand-name{font-size:15px} }
 
 /* search block: category select + input + separate button */
@@ -230,7 +230,7 @@ h1,h2,h3,h4{margin:0;line-height:1.25;letter-spacing:-.01em}
 .band{background:var(--bg-soft);border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
 .band-navy{background:var(--blue-dk);color:#fff;border:0}
 .band-navy .sec-title{color:#fff}
-.band-navy .sec-sub{color:#A9BCEB}
+.band-navy .sec-sub{color:#CFE3D9}
 
 /* ---------- category tiles ---------- */
 .tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
@@ -242,9 +242,9 @@ h1,h2,h3,h4{margin:0;line-height:1.25;letter-spacing:-.01em}
   border:1px solid rgba(255,255,255,.12);
 }
 @media (min-width:768px){ .tile{min-height:170px;padding:22px} }
-.tile-1{background:linear-gradient(135deg,#0B2A7A,#1F4FD8)}
-.tile-2{background:linear-gradient(135deg,#123C93,#0B2A7A)}
-.tile-3{background:linear-gradient(135deg,#1F4FD8,#4E7BF0)}
+.tile-1{background:linear-gradient(135deg,#0E5439,#14684A)}
+.tile-2{background:linear-gradient(135deg,#123C93,#0E5439)}
+.tile-3{background:linear-gradient(135deg,#14684A,#4E7BF0)}
 .tile-4{background:linear-gradient(135deg,#081F57,#123C93)}
 .tile-t{display:block;font-size:14.5px;font-weight:800;line-height:1.2;letter-spacing:-.01em;position:relative;z-index:2}
 @media (min-width:768px){ .tile-t{font-size:17px} }
@@ -456,7 +456,7 @@ h1,h2,h3,h4{margin:0;line-height:1.25;letter-spacing:-.01em}
 .pj:hover{box-shadow:var(--shadow-2);border-color:var(--blue-line)}
 .pj-media{
   height:132px;position:relative;display:grid;place-items:center;color:#fff;
-  background:linear-gradient(135deg,#0B2A7A,#1F4FD8);
+  background:linear-gradient(135deg,#0E5439,#14684A);
 }
 @media (min-width:700px){ .pj-media{height:150px} }
 .pj-media::after{content:"";position:absolute;inset:0;background:
@@ -521,7 +521,7 @@ h1,h2,h3,h4{margin:0;line-height:1.25;letter-spacing:-.01em}
 
 /* ---------- cta ---------- */
 .cta{
-  background:linear-gradient(135deg,#0B2A7A,#123C93);border-radius:var(--r-l);
+  background:linear-gradient(135deg,#0E5439,#123C93);border-radius:var(--r-l);
   padding:24px 20px;color:#fff;display:grid;gap:18px;align-items:center;
 }
 @media (min-width:900px){ .cta{grid-template-columns:1fr auto;padding:36px 40px} }
@@ -664,7 +664,7 @@ h1,h2,h3,h4{margin:0;line-height:1.25;letter-spacing:-.01em}
 /* ---------- admin ---------- */
 .adm{max-width:var(--wrap);margin:0 auto;padding:24px var(--pad-x) 48px}
 .adm-top{
-  background:linear-gradient(135deg,#0B2A7A,#1F4FD8);color:#fff;border-radius:var(--r-m);
+  background:linear-gradient(135deg,#0E5439,#14684A);color:#fff;border-radius:var(--r-m);
   padding:20px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;
 }
 .adm-top h1{font-size:20px;font-weight:800;letter-spacing:-.02em}
@@ -1267,7 +1267,7 @@ function clientsHTML() {
 function viewHome() {
   const c = counts();
   return '' +
-  '<div style="background:linear-gradient(120deg,#0B2A7A,#1F4FD8);color:#fff;padding:18px 0">' +
+  '<div style="background:linear-gradient(120deg,#0E5439,#14684A);color:#fff;padding:18px 0">' +
     '<div class="wrap" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">' +
       '<span style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700">' +
         svg('truck', 17, '', 2) + 'Kirim hari ini juga untuk pesanan sebelum pukul 15.00 WIB</span>' +

@@ -7,10 +7,10 @@
 <meta name="description" content="Rejeki Alam — marketplace material bangunan: mortar, cat, aksesoris, dan waterproofing. Pesan lewat WhatsApp.">
 <style>
 :root{
-  --green:#00AA5B; --green-d:#0F9D58; --green-l:#e7f7ee;
-  --blue:#2b6cf0; --blue-d:#1b4fc4; --teal:#12b0b8;
-  --ink:#16202b; --ink2:#3d4c5c; --muted:#6b7b8c;
-  --line:#e6ecf2; --bg:#f4f7fa; --white:#fff;
+  --green:#14684A; --green-d:#0E5439; --green-l:#E9F4EE;
+  --blue:#14684A; --blue-d:#0E5439; --teal:#C08A2E;
+  --ink:#14180F; --ink2:#6B6659; --muted:#6B6659;
+  --line:#E6E1D6; --bg:#FFFFFF; --white:#FFFFFF;
   --wa:#25D366; --wa-d:#1eb455;
   --amber:#f59e0b; --rose:#e11d48;
   --r-s:10px; --r-m:14px; --r-l:20px; --r-xl:26px;
@@ -97,7 +97,7 @@ header.hd{background:var(--white);box-shadow:var(--sh);position:sticky;top:0;z-i
 }
 
 /* ══ HERO / GRADIENT BANNER ══ */
-.hero{background:linear-gradient(135deg,#2b6cf0 0%,#1f8fd6 48%,#12b0b8 100%);color:#fff;position:relative;overflow:hidden}
+.hero{background:linear-gradient(135deg,#14684A 0%,#1f8fd6 48%,#C08A2E 100%);color:#fff;position:relative;overflow:hidden}
 .hero::after{content:"";position:absolute;right:-90px;top:-90px;width:320px;height:320px;border-radius:50%;
   background:rgba(255,255,255,.10)}
 .hero::before{content:"";position:absolute;left:-70px;bottom:-120px;width:260px;height:260px;border-radius:50%;
@@ -214,7 +214,7 @@ section.blk{padding:44px 0}
 /* ══ TRAIT 3 — BUKA LAPAK ══ */
 .lapak{border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sh2);display:grid;
   grid-template-columns:1fr 1fr;background:#fff;border:1px solid var(--line)}
-.lapak-a{padding:32px 30px;background:linear-gradient(140deg,#0f9d58,#00aa5b 55%,#12b0b8);color:#fff;
+.lapak-a{padding:32px 30px;background:linear-gradient(140deg,#0f9d58,#14684A 55%,#C08A2E);color:#fff;
   display:flex;flex-direction:column;justify-content:center}
 .lapak-a h2{font-size:clamp(20px,2.8vw,27px);font-weight:800;letter-spacing:-.7px;line-height:1.2}
 .lapak-a p{margin-top:12px;font-size:14.5px;line-height:1.65;color:rgba(255,255,255,.93)}
@@ -269,7 +269,7 @@ section.blk{padding:44px 0}
 .cli b{font-size:13px;font-weight:700;line-height:1.3;letter-spacing:-.1px}
 
 /* ══ CATALOGUE ══ */
-.cathead{background:linear-gradient(135deg,#2b6cf0,#12b0b8);color:#fff;padding:30px 0 34px}
+.cathead{background:linear-gradient(135deg,#14684A,#C08A2E);color:#fff;padding:30px 0 34px}
 .cathead h1{font-size:clamp(23px,3.4vw,32px);font-weight:800;letter-spacing:-.8px}
 .cathead p{margin-top:9px;font-size:14.5px;color:rgba(255,255,255,.9);max-width:60ch;line-height:1.6}
 .filters{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:20px 0 18px}
@@ -315,7 +315,7 @@ section.blk{padding:44px 0}
 
 /* ══ ADMIN ══ */
 .adm{background:var(--bg);min-height:100vh}
-.admhd{background:linear-gradient(135deg,#2b6cf0,#12b0b8);color:#fff;padding-top:calc(14px + var(--sat))}
+.admhd{background:linear-gradient(135deg,#14684A,#C08A2E);color:#fff;padding-top:calc(14px + var(--sat))}
 .admhd-in{display:flex;align-items:center;gap:14px;padding-bottom:14px;flex-wrap:wrap}
 .admhd .logo-badge{background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.3)}
 .admhd b{font-size:16px;font-weight:800;display:block;line-height:1.2}
@@ -367,7 +367,7 @@ section.blk{padding:44px 0}
 
 /* ══ LOGIN ══ */
 .login{min-height:100dvh;min-height:100vh;display:grid;place-items:center;padding:20px;
-  background:linear-gradient(140deg,#2b6cf0,#12b0b8);padding-top:calc(20px + var(--sat))}
+  background:linear-gradient(140deg,#14684A,#C08A2E);padding-top:calc(20px + var(--sat))}
 .lcard{background:#fff;border-radius:var(--r-xl);padding:30px 26px;width:100%;max-width:390px;
   box-shadow:0 24px 60px rgba(0,0,0,.25)}
 .lcard h2{font-size:21px;font-weight:800;letter-spacing:-.5px;text-align:center;margin-bottom:4px}
@@ -777,14 +777,14 @@ const IC_PRJ = {
 function catIcon(cat, size){
   const inner = IC_CAT[cat] || IC_DEF;
   return '<svg width="'+(size||24)+'" height="'+(size||24)+'" viewBox="0 0 24 24" fill="none" '+
-    'stroke="#2b6cf0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" '+
+    'stroke="#14684A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" '+
     'aria-hidden="true" focusable="false">'+inner+'</svg>';
 }
 function projIcon(title, size){
   let inner = IC_DEF;
   for (const k in IC_PRJ) { if (new RegExp(k).test(String(title||''))) { inner = IC_PRJ[k]; break; } }
   return '<svg width="'+(size||30)+'" height="'+(size||30)+'" viewBox="0 0 24 24" fill="none" '+
-    'stroke="#2b6cf0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" '+
+    'stroke="#14684A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" '+
     'aria-hidden="true" focusable="false">'+inner+'</svg>';
 }
 const ICON_STAR = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.2l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg>';

@@ -13,18 +13,18 @@
    "Beli" button plus two accents.
    ══════════════════════════════════════════════════════════════════════ */
 :root{
-  --hdr:#131921;          /* near-black header */
-  --hdr2:#232f3e;         /* header secondary band */
-  --page:#EAEDED;         /* light grey page background */
-  --card:#ffffff;
-  --ink:#0f1115;
-  --ink2:#565959;         /* secondary text */
-  --ink3:#8d9192;         /* tertiary text */
-  --line:#d5d9d9;
-  --line2:#e7e7e7;
+  --hdr:#14684A;          /* near-black header */
+  --hdr2:#0E5439;         /* header secondary band */
+  --page:#FFFFFF;         /* light grey page background */
+  --card:#FFFFFF;
+  --ink:#14180F;
+  --ink2:#6B6659;         /* secondary text */
+  --ink3:#6B6659;         /* tertiary text */
+  --line:#E6E1D6;
+  --line2:#E6E1D6;
   --link:#007185;         /* amazon link teal */
-  --link2:#c45500;        /* hover link */
-  --orange:#FF9900;       /* ONLY buy buttons + accents */
+  --link2:#8A5A10;        /* hover link */
+  --orange:#C08A2E;       /* ONLY buy buttons + accents */
   --orange-d:#e88a00;
   --green:#007600;
   --red:#b12704;
@@ -58,7 +58,7 @@ ul{list-style:none}
 .deliv{display:flex;flex-direction:column;justify-content:center;color:#d6dade;padding:6px 4px;
   min-height:var(--tap);line-height:1.15;flex:0 0 auto;cursor:pointer;background:none;border:0;text-align:left}
 .deliv b{color:#fff;font-weight:600;font-size:13px}
-.deliv span{font-size:11px;color:#a8b3ba}
+.deliv span{font-size:11px;color:#D8E6E0}
 .srchwrap{flex:1 1 auto;display:flex;min-width:0;max-width:620px}
 .srchwrap .cat{border:0;background:var(--line2);color:var(--ink);font-size:16px;padding:0 6px;height:var(--tap);
   border-radius:4px 0 0 4px;max-width:104px}
@@ -263,7 +263,7 @@ footer h4{color:#fff;font-size:14px;margin-bottom:8px;font-weight:700}
 footer a,footer li{font-size:12.5px;color:#d6dade;line-height:1.9;display:block}
 footer a:hover{color:#fff}
 .fbot{border-top:1px solid #3c4857;padding:12px 0 18px;font-size:12px;display:flex;
-  justify-content:space-between;gap:12px;flex-wrap:wrap;color:#aab3ba}
+  justify-content:space-between;gap:12px;flex-wrap:wrap;color:#C3D6CD}
 
 /* ── modal ──────────────────────────────────────────────────────────── */
 .ovl{position:fixed;inset:0;background:rgba(15,17,21,.6);z-index:120;display:none;align-items:flex-start;
@@ -560,7 +560,7 @@ const SVG = {
       const w = Math.max(0, Math.min(1, pct - i));
       stars.push(
         '<svg width="'+size+'" height="'+size+'" viewBox="0 0 24 24" style="flex:0 0 auto">'+
-          '<defs><linearGradient id="sg'+i+'_'+(w*100|0)+'"><stop offset="'+w+'" stop-color="#FF9900"/>'+
+          '<defs><linearGradient id="sg'+i+'_'+(w*100|0)+'"><stop offset="'+w+'" stop-color="#C08A2E"/>'+
           '<stop offset="'+w+'" stop-color="#d5d9d9"/></linearGradient></defs>'+
           '<path fill="url(#sg'+i+'_'+(w*100|0)+')" d="M12 2.6l2.9 5.9 6.5.95-4.7 4.6 1.1 6.5L12 17.5 6.2 20.5l1.1-6.5-4.7-4.6 6.5-.95z"/>'+
         '</svg>');

@@ -7,10 +7,10 @@
 <meta name="description" content="Rejeki Alam — pemasok material bangunan. Semen, mortar, cat, waterproofing, aksesoris. Pesan langsung via WhatsApp.">
 <style>
   :root{
-    --or:#EE4D2D; --or-d:#d63c1d; --or-l:#FF6A45;
-    --grn:#00AA5B; --grn-d:#00874a;
-    --page:#F5F5F5; --ink:#222; --ink2:#666; --ink3:#9a9a9a;
-    --line:#ebebeb; --card:#fff;
+    --or:#14684A; --or-d:#0E5439; --or-l:#1B8A63;
+    --grn:#C08A2E; --grn-d:#9A6B1E;
+    --page:#FFFFFF; --ink:#1A1A1A; --ink2:#6B6659; --ink3:#5F5B50;
+    --line:#E6E1D6; --card:#FFFFFF;
     --r:10px; --r2:12px;
     --sh:0 1px 2px rgba(0,0,0,.06),0 2px 8px rgba(0,0,0,.06);
     --sh2:0 4px 16px rgba(0,0,0,.12);
@@ -89,8 +89,8 @@
   .pcard{background:#fff;border-radius:0;box-shadow:none;overflow:hidden;cursor:pointer;
     display:flex;flex-direction:column;border:0;text-align:left;padding:0;min-width:0}
   .pcard .ph{position:relative;aspect-ratio:1/1;background:#faf0ec;display:grid;place-items:center}
-  .pcard .ph .big{width:56%;height:56%;color:#E4A38C}
-  .ph .disc{position:absolute;top:0;left:0;background:var(--or);color:#fff;font-size:11px;font-weight:800;
+  .pcard .ph .big{width:56%;height:56%;color:#8FB9A5}
+  .ph .disc{position:absolute;top:0;left:0;background:var(--or);color:#3A2A08;font-size:11px;font-weight:800;
     padding:3px 7px;border-bottom-right-radius:8px;line-height:1.2}
   .ph .sold{position:absolute;left:0;bottom:0;background:rgba(0,0,0,.55);color:#fff;font-size:10.5px;
     padding:2px 7px;border-top-right-radius:8px}
@@ -190,7 +190,7 @@
   .tabs::-webkit-scrollbar{display:none}
   .tabs button{flex:0 0 auto;min-height:40px;padding:0 14px;border-radius:8px;border:1px solid var(--line);background:#fff;
     font-size:13.5px;font-weight:600;cursor:pointer;color:var(--ink2)}
-  .tabs button[aria-selected="true"]{background:var(--or);color:#fff;border-color:var(--or)}
+  .tabs button[aria-selected="true"]{background:var(--or);color:#3A2A08;border-color:var(--or)}
   .skel{background:linear-gradient(90deg,#eee 25%,#f7f7f7 37%,#eee 63%);background-size:400% 100%;animation:sk 1.2s infinite;border-radius:6px}
   @keyframes sk{0%{background-position:100% 0}100%{background-position:0 0}}
   @media (min-width:600px){
@@ -355,7 +355,7 @@ function productIcon(p){
 // label panjang dipendekkan di grid 4 kolom supaya tidak terpotong ellipsis
 const CAT_SHORT = { 'Waterproofing':'Anti Bocor', 'Aksesoris':'Aksesoris', 'Mortar':'Mortar', 'Cat':'Cat' };
 const catLabel = k => CAT_SHORT[k] || k;
-const CAT_TINT = { 'Mortar':'#EE4D2D', 'Cat':'#EE4D2D', 'Aksesoris':'#EE4D2D', 'Waterproofing':'#EE4D2D' };
+const CAT_TINT = { 'Mortar':'#14684A', 'Cat':'#14684A', 'Aksesoris':'#14684A', 'Waterproofing':'#14684A' };
 
 /* ══ util ═══════════════════════════════════════════════════ */
 const $  = (s,r)=> (r||document).querySelector(s);
@@ -501,7 +501,7 @@ function viewBeranda(){
 
   '<section class="sec"><div class="card" style="margin:0 12px;max-width:1176px">' +
     '<div class="catgrid">' +
-      cats.map(k=>'<button class="cat" data-cat="'+esc(k)+'" title="'+esc(k)+'"><span class="ci" style="color:'+(CAT_TINT[k]||'#EE4D2D')+'">'+
+      cats.map(k=>'<button class="cat" data-cat="'+esc(k)+'" title="'+esc(k)+'"><span class="ci" style="color:'+(CAT_TINT[k]||'#14684A')+'">'+
         icon(CAT_ICON[k]||'box')+'</span><span class="cn">'+esc(catLabel(k))+'</span></button>').join('') +
     '</div>' +
   '</div></section>' +
