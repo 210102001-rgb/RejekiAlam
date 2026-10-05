@@ -142,10 +142,10 @@ ul{list-style:none;padding:0}
 .sec-more{font-size:12.5px;font-weight:700;color:var(--purple-l);display:inline-flex;align-items:center;gap:4px;min-height:44px;padding:0 4px}
 .sec-more:hover{text-decoration:underline}
 
-/* ── HOME: flash rail (left vertical) + product grid ──────────────── */
+/* ── HOME: rail (left vertical) + product grid ──────────────── */
 .home-grid{display:grid;grid-template-columns:196px minmax(0,1fr);gap:12px;align-items:start}
 
-/* the signature Lazada vertical flash-sale rail */
+/* the signature Lazada vertical rail */
 .rail{background:var(--grad-rail);border-radius:var(--r-lg);overflow:hidden;color:#fff;
   position:sticky;top:calc(var(--hdr) + 8px);box-shadow:var(--shadow-md)}
 .rail-top{padding:14px 12px 12px;text-align:center;background:
@@ -246,32 +246,6 @@ ul{list-style:none;padding:0}
   font-size:13px;letter-spacing:-.4px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 .btile small{font-size:10.5px;color:var(--ink-2);text-align:center;line-height:1.25;width:100%;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-
-/* ── Coupon strip ─────────────────────────────────────────────────── */
-.coupons{display:flex;gap:10px;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;
-  padding:2px 0 6px;scrollbar-width:thin}
-.coupons::-webkit-scrollbar{height:6px}
-.coupons::-webkit-scrollbar-thumb{background:#D9D4E4;border-radius:4px}
-.coupon{flex:0 0 auto;width:238px;scroll-snap-align:start;display:flex;align-items:stretch;background:#fff;
-  border:1px solid var(--line-2);border-radius:var(--r-lg);overflow:hidden;position:relative;box-shadow:var(--shadow)}
-.coupon-l{flex:0 0 92px;background:var(--grad-rail);color:#fff;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;padding:12px 6px;position:relative}
-.coupon-l b{font-size:24px;font-weight:800;line-height:1;letter-spacing:-1px}
-.coupon-l span{font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;opacity:.85;margin-top:3px}
-.coupon-l::after{content:"";position:absolute;right:0;top:0;bottom:0;width:2px;background:transparent}
-/* perforation: dashed line + notches */
-.coupon-perf{position:absolute;left:92px;top:0;bottom:0;width:0;border-left:2px dashed #D9D4E4;z-index:2}
-.coupon-perf::before,.coupon-perf::after{content:"";position:absolute;left:-9px;width:16px;height:16px;border-radius:50%;
-  background:var(--wash);border:2px solid var(--line-2)}
-.coupon-perf::before{top:-9px}
-.coupon-perf::after{bottom:-9px}
-.coupon-r{flex:1 1 auto;min-width:0;padding:10px 10px 10px 14px;display:flex;flex-direction:column;gap:5px}
-.coupon-r b{font-size:12.5px;font-weight:800;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;
-  -webkit-box-orient:vertical;overflow:hidden}
-.coupon-r p{font-size:10.5px;color:var(--ink-3);line-height:1.3}
-.coupon-r .coupon-f{margin-top:auto;display:flex;align-items:center;gap:6px;justify-content:space-between}
-.coupon-min{font-size:10px;color:var(--ink-3);font-weight:600}
-.claimed{font-size:10.5px;font-weight:800;color:var(--ok);background:var(--ok-bg);padding:4px 8px;border-radius:5px}
 
 /* ── Projects ─────────────────────────────────────────────────────── */
 .pjgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
@@ -489,8 +463,7 @@ textarea.inp{height:auto;min-height:78px;padding:10px 12px;line-height:1.5;resiz
   .wrap{padding:0 10px}
   .sec-h h2{font-size:16px}
   .pjgrid,.tgrid{grid-template-columns:1fr}
-  .coupon{width:210px}
-  .pd-hero{flex-direction:column}
+    .pd-hero{flex-direction:column}
   .pd-img{width:100%;height:110px}
   .edit-f{grid-template-columns:1fr}
   .modal{padding:0}
@@ -577,7 +550,7 @@ textarea.inp{height:auto;min-height:78px;padding:10px 12px;line-height:1.5;resiz
   <div class="trust-in">
     <div class="trust-i"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.2-2.9 7.7-7 9-4.1-1.3-7-4.8-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg> Garansi 100% asli</div>
     <div class="trust-i"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="10" width="18" height="10" rx="2"/><path d="M7 10V7a5 5 0 0 1 10 0v3"/></svg> Pembayaran aman</div>
-    <div class="trust-i"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v10H3z"/><path d="M14 10h4l3 3v4h-7"/><circle cx="7" cy="19" r="1.6"/><circle cx="17.5" cy="19" r="1.6"/></svg> Gratis ongkir area Jabodetabek</div>
+    <div class="trust-i"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v10H3z"/><path d="M14 10h4l3 3v4h-7"/><circle cx="7" cy="19" r="1.6"/><circle cx="17.5" cy="19" r="1.6"/></svg> Dikirim dari gudang kami</div>
   </div>
 </div>
 
@@ -601,8 +574,8 @@ textarea.inp{height:auto;min-height:78px;padding:10px 12px;line-height:1.5;resiz
       <h4><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg> Order</h4>
       <ul>
         <li><a href="#produk">Katalog produk</a></li>
-        <li><a href="#beranda">Flash sale mingguan</a></li>
-        <li>Voucher member via WhatsApp</li>
+        <li><a href="#beranda">Produk terlaris</a></li>
+        <li>Penawaran proyek via WhatsApp</li>
         <li>Penawaran proyek (borongan)</li>
       </ul>
     </div>
@@ -748,22 +721,11 @@ function savings(p) {
   if (!p.compare_price || p.compare_price <= p.price) return 0;
   return Math.round((1 - p.price / p.compare_price) * 100);
 }
-function voucherTag(p) {
-  if (p.stock < 20) return 'Voucher 15%';
-  if (savings(p) >= 10) return 'Voucher 10%';
-  return 'Voucher 5%';
-}
 function stockLabel(p) {
   if (p.stock <= 0) return 'Habis';
   if (p.stock < 10) return 'Sisa ' + p.stock;
   if (p.stock < 50) return 'Stok menipis';
   return 'Stok ' + num(p.stock) + ' ' + (p.unit || '');
-}
-function flashPick() {
-  // flash-sale rail picks: discounted + lowest-stock items
-  return S.products.filter(p => p.stock > 0)
-    .slice().sort((a, b) => (savings(b) * 10 + (100 - Math.min(100, b.stock))) - (savings(a) * 10 + (100 - Math.min(100, a.stock))))
-    .slice(0, 3);
 }
 function filtered() {
   let out = S.products.slice();
@@ -795,7 +757,7 @@ function prodCard(p) {
     + '<div class="pcard-p"><b>' + rupiah(p.price) + '</b>'
     + (p.compare_price && p.compare_price > p.price ? '<s>' + rupiah(p.compare_price) + '</s>' : '')
     + '<em>/' + esc(p.unit || 'sak') + '</em></div>'
-    + (sv > 0 ? '<span class="vouch">' + SVG.tag + ' ' + esc(voucherTag(p)) + ' · -' + sv + '%</span>' : '<span class="vouch">' + SVG.tag + ' ' + esc(voucherTag(p)) + '</span>')
+    + ('<span class="vouch">Stok ' + num(p.stock) + '</span>')
     + '<div class="pcard-f">'
     + '<button class="btn btn-p" data-act="add" data-id="' + p.id + '"' + (oos ? ' disabled' : '') + '>' + (oos ? 'Habis' : 'Pesan') + '</button>'
     + '<button class="btn btn-w" data-act="wa" data-id="' + p.id + '">Chat</button>'
@@ -808,7 +770,7 @@ function tickCountdown() {
   const now = new Date();
   const end = new Date(now); end.setHours(23, 59, 59, 999);
   let ms = end - now;
-  // weekly cycle: flash sale resets every Monday 00:00
+  // weekly cycle
   const day = (end.getDay() + 6) % 7;
   if (day !== 0 || now.getHours() !== 0) ms += (7 - day) * 864e5 - now.getHours() * 36e5;
   ms = Math.max(0, ms);
@@ -820,30 +782,6 @@ function tickCountdown() {
 function cdBox(id, label) {
   return '<div class="cd-row"><span class="cd-lbl">' + label + '</span>'
     + '<span class="cd-box"><b class="cd-n" id="' + id + '">00</b></span></div>';
-}
-
-/* ═══ COUPONS (Lazada coupon rail — dashed perforation) ═══ */
-const COUPONS = [
-  { off: 10, cap: '100rb', title: 'Voucher 10% untuk mortar & screed', min: 'Min. belanja Rp 300.000', until: 'Berlaku s/d 31 Des' },
-  { off: 15, cap: '150rb', title: 'Voucher 15% khusus waterproofing', min: 'Min. belanja Rp 500.000', until: 'Berlaku s/d 28 Des' },
-  { off: 20, cap: '200rb', title: 'Voucher 20% untuk cat interior', min: 'Min. belanja Rp 400.000', until: 'Berlaku s/d 30 Nov' },
-  { off: 5, cap: '50rb', title: 'Gratis ongkir Jabodetabek', min: 'Min. belanja Rp 150.000', until: 'Selalu aktif' },
-  { off: 12, cap: '120rb', title: 'Voucher 12% aksesoris bangunan', min: 'Min. belanja Rp 250.000', until: 'Berlaku s/d 15 Des' }
-];
-const claimed = {};
-function couponStrip() {
-  return '<section class="sec"><div class="wrap"><div class="sec-h">'
-    + '<h2>Voucher & Promo</h2><p>Klaim voucher, berlaku saat konfirmasi pesanan via WhatsApp.</p>'
-    + '<span class="sec-more" aria-hidden="true">Lihat semua ' + SVG.chev + '</span></div>'
-    + '<div class="coupons" id="coupons">' + COUPONS.map((c, i) =>
-      '<div class="coupon"><div class="coupon-perf"></div>'
-      + '<div class="coupon-l"><b>' + c.off + '%</b><span>Potongan ' + c.cap + '</span></div>'
-      + '<div class="coupon-r"><b>' + esc(c.title) + '</b><p>' + esc(c.min) + '<br>' + esc(c.until) + '</p>'
-      + '<div class="coupon-f"><span class="coupon-min">Kode: <b>RA' + (10 + i) + '</b></span>'
-      + (claimed[i]
-        ? '<span class="claimed">Diklaim</span>'
-        : '<button class="btn btn-pu sm" data-act="claim" data-i="' + i + '">Klaim</button>')
-      + '</div></div></div>').join('') + '</div></div></section>';
 }
 
 /* ═══ BRAND STRIP (text monograms, NOT logos) ═══ */
@@ -862,23 +800,26 @@ function brandStrip() {
     + '</div></div></div></section>';
 }
 
-/* ═══ FLASH RAIL (the signature Lazada vertical panel) ═══ */
+function bestSellers() {
+  return S.products.slice(0, 4);
+}
+
+/* ═══ RAIL (vertical panel — signature Lazada layout) ═══ */
 function railHTML() {
-  const picks = flashPick();
+  const picks = bestSellers();
   return '<aside class="rail" id="rail">'
-    + '<div class="rail-top"><span class="rail-tag">' + SVG.bolt + ' Flash Sale</span>'
-    + '<div class="rail-h">Diskonhao<br>Minggu Ini</div>'
-    + '<div class="rail-sub">Reset setiap Senin 00.00 WIB</div></div>'
-    + '<div class="cd">' + cdBox('cdH', 'Jam') + cdBox('cdM', 'Menit') + cdBox('cdS', 'Detik') + '</div>'
-    + '<a class="rail-all" href="#produk" data-act="allflash">Lihat Semua ' + SVG.chev + '</a>'
-    + '<div class="rail-mt">' + SVG.bolt + ' Serba Murah</div>'
+    + '<div class="rail-top"><span class="rail-tag">' + SVG.tag + ' Terlaris</span>'
+    + '<div class="rail-h">Produk<br>Paling Dicari</div>'
+    + '<div class="rail-sub">Paling sering dipesan pelanggan</div></div>'
+    + '<a class="rail-all" href="#produk" data-act="allbest">Lihat Semua ' + SVG.chev + '</a>'
+    + '<div class="rail-mt">' + SVG.tag + ' Rekomendasi</div>'
     + '<div class="rail-p-list">' + picks.map(p => {
-      const sv = savings(p);
       return '<button class="rail-p" data-act="detail" data-id="' + p.id + '">'
         + '<span class="rail-p-img">' + prodIcon(p) + '</span>'
         + '<span class="rail-p-tx"><span class="rail-p-n">' + esc(p.name) + '</span>'
-        + '<span class="rail-p-p">' + rupiah(p.price) + (sv > 0 ? '<s>' + rupiah(p.compare_price) + '</s>' : '') + '</span>'
-        + '<span class="rail-p-o">Sisa ' + p.stock + ' ' + esc(p.unit || 'sak') + (sv > 0 ? ' · -' + sv + '%' : '') + '</span>'
+        + '<span class="rail-p-p">' + rupiah(p.price)
+          + (p.compare_price && p.compare_price > p.price ? '<s>' + rupiah(p.compare_price) + '</s>' : '') + '</span>'
+        + '<span class="rail-p-o">Stok ' + p.stock + ' ' + esc(p.unit || 'sak') + '</span>'
         + '</span></button>';
     }).join('') + '</div>'
     + '<div class="rail-foot">Harga &amp; stok data demo</div></aside>';
@@ -899,7 +840,7 @@ function viewHome() {
       : '<div class="empty">' + SVG.search + 'Produk tidak ditemukan.</div>') + '</div></div>'
     + '</div></div>'
     + brandStrip()
-    + couponStrip()
+   
     + '<section class="sec"><div class="wrap"><div class="sec-h">'
     + '<h2>Proyek Referensi</h2><p>' + esc(DUMMY_NOTE) + '</p></div>'
     + '<div class="pjgrid" id="pjGrid">' + (c.projects.length ? c.projects.map(p =>
@@ -1069,8 +1010,7 @@ function openDetail(id) {
     + '<div class="kv"><span>Harga</span><b class="big">' + rupiah(p.price) + ' / ' + esc(p.unit || 'sak') + '</b></div>'
     + (p.compare_price && p.compare_price > p.price ? '<div class="kv"><span>Harga normal</span><b><s>' + rupiah(p.compare_price) + '</s></b></div>' : '')
     + '<div class="kv"><span>Stok tersedia</span><b>' + (p.stock > 0 ? num(p.stock) + ' ' + esc(p.unit || 'sak') : 'Habis') + '</b></div>'
-    + '<div class="kv"><span>Voucher</span><b>' + esc(voucherTag(p)) + '</b></div>'
-    + '<div class="kv"><span>Pengiriman</span><b>Gratis ongkir area Jabodetabek</b></div>'
+       + '<div class="kv"><span>Pengiriman</span><b>Dikirim dari gudang kami</b></div>'
     + '<div class="desc">' + esc(p.description || 'Deskripsi produk belum tersedia.') + '</div>'
     + '<div class="note">' + SVG.bolt + '<span>Data produk ini merupakan data demo dari API katalog. Pesanan dikirim lewat WhatsApp ke +62 812-3456-7890.</span></div>';
   $('#modalFoot').innerHTML = '<button class="btn btn-w" data-act="wa" data-id="' + p.id + '" style="flex:1.2">'
@@ -1228,7 +1168,7 @@ document.addEventListener('click', ev => {
     const txt = 'Halo Rejeki Alam, saya tertarik dengan:\n\n' + p.name
       + '\nHarga: ' + rupiah(p.price) + ' / ' + (p.unit || 'sak')
       + '\nStok: ' + p.stock + ' ' + (p.unit || 'sak')
-      + '\n\nBoleh tanya ketersediaan dan voucher-nya?';
+      + '\n\nBoleh tanya ketersediaan dan harga terbaru?';
     window.open(waLink(txt), '_blank', 'noopener');
     closeModal();
     return;
@@ -1247,13 +1187,7 @@ document.addEventListener('click', ev => {
     }
     saveCart(); renderCart(); return;
   }
-  if (act === 'claim') {
-    claimed[actEl.dataset.i] = true;
-    toast('Voucher diklaim — tunjukkan kode saat order via WhatsApp');
-    render();
-    return;
-  }
-  if (act === 'allflash') { S.cat = 'Semua'; location.hash = '#produk'; return }
+    if (act === 'allbest') { S.cat = 'Semua'; location.hash = '#produk'; return }
   if (act === 'cat') {
     S.cat = actEl.dataset.c; $('#mega').classList.remove('on');
     $('#kbtn').setAttribute('aria-expanded', 'false');

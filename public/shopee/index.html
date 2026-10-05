@@ -82,50 +82,7 @@
     display:flex;gap:8px;align-items:flex-start}
   .note .ic-sm{margin-top:1px;color:#F5A623}
 
-  /* flash sale */
-  .flash{background:linear-gradient(135deg,#FF5F3D 0%,#EE4D2D 55%,#D93A18 100%);border-radius:var(--r2);
-    margin:10px 12px 0;max-width:1176px;margin-inline:auto;padding:12px 0 14px;box-shadow:0 4px 14px rgba(238,77,45,.35)}
-  .flash-h{display:flex;align-items:center;gap:10px;padding:0 12px 10px;color:#fff}
-  .flash-h .t{font-weight:800;font-size:16px;display:flex;align-items:center;gap:6px}
-  .flash-h .cd{display:flex;align-items:center;gap:4px;margin-left:auto}
-  .cd-box{background:#fff;color:var(--or);border-radius:6px;font-weight:800;font-size:12px;padding:4px 5px;min-width:24px;text-align:center;line-height:1}
-  .cd-sep{color:#fff;font-weight:800}
-  .flash-scroll{display:flex;gap:10px;overflow-x:auto;padding:0 12px 2px;scrollbar-width:none;scroll-snap-type:x proximity;
-    -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 24px),transparent);
-    mask-image:linear-gradient(90deg,#000 calc(100% - 24px),transparent)}
-  .flash-scroll::-webkit-scrollbar{display:none}
-  .fcard{flex:0 0 122px;width:122px;background:#fff;border-radius:10px;overflow:hidden;scroll-snap-align:start;cursor:pointer}
-  .fcard .ph{position:relative;height:96px;background:#faf0ec;display:grid;place-items:center}
-  .fcard .nm{font-size:11.5px;padding:6px 7px 0;height:32px;overflow:hidden;line-height:1.3}
-  .fcard .pr{font-weight:800;color:var(--or);font-size:13.5px;padding:3px 7px}
-  .fcard .pr s{color:var(--ink3);font-weight:400;font-size:10.5px;margin-left:4px}
-
-  /* cat grid */
-  .catgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding:10px}
-  /* min-width:0 wajib — tanpa itu kolom grid ikut melebar mengikuti label
-     terpanjang ("Waterproofing") dan muncul scroll horizontal di 320px */
-  .cat{background:#fff;border-radius:var(--r2);box-shadow:var(--sh);padding:12px 4px;display:grid;place-items:center;gap:7px;
-    cursor:pointer;border:0;text-align:center;min-height:88px;min-width:0}
-  .cat:active{background:#fff6f3}
-  .cat .ci{width:42px;height:42px;border-radius:12px;background:#FFF1EC;color:var(--or);display:grid;place-items:center}
-  /* label panjang dipotong rapi, jangan patah di tengah kata */
-  .cat .cn{font-size:11.5px;font-weight:600;line-height:1.2;max-width:100%;overflow:hidden;
-    text-overflow:ellipsis;white-space:nowrap}
-
-  /* product grid */
-  .pgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;padding:0 0 12px}
-  /* Shopee separates cards with hairlines, not shadows */
-  .pgrid > .pcard{border-right:.5px solid rgba(0,0,0,.09);border-bottom:.5px solid rgba(0,0,0,.09)}
-  .pgrid > .pcard:nth-child(2n){border-right:0}
-  .pgrid > .pcard{border-left:.5px solid rgba(0,0,0,.09)}
-  @media(min-width:900px){
-    .pgrid{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .pgrid > .pcard:nth-child(2n){border-right:.5px solid rgba(0,0,0,.09)}
-    .pgrid > .pcard:nth-child(3n){border-right:0}
-  }
-  @media(min-width:1200px){
-    .pgrid{grid-template-columns:repeat(4,minmax(0,1fr))}
-    .pgrid > .pcard:nth-child(3n){border-right:.5px solid rgba(0,0,0,.09)}
+  card:nth-child(3n){border-right:.5px solid rgba(0,0,0,.09)}
     .pgrid > .pcard:nth-child(4n){border-right:0}
   }
   .pgrid > *{min-width:0}
@@ -447,12 +404,12 @@ function hydrateIcons(){
 }
 
 /* ══ data ══════════════════════════════════════════════════ */
-let pendingFlash = false;
+
 const S = {
   products: [], categories: [], content: null,
   loading: false, loadError: false,
   q: '', cat: 'Semua', sort: 'name',
-  flash: [], flashEnd: 0, activeTab: null, tabLock: false,
+  activeTab: null, tabLock: false,
   admin: { authed: false, tab: 'projects' }
 };
 
@@ -480,21 +437,11 @@ function loadAll(){
     if (p) S.products = p; else S.loadError = true;
     if (c && c.length) S.categories = c;
     if (ct) S.content = ct;
-    buildFlash();
     syncUrl();
     render();
   });
 }
 
-function buildFlash(){
-  const pool = S.products.filter(p => p.compare_price && p.compare_price > p.price);
-  const rest = S.products.filter(p => !(p.compare_price && p.compare_price > p.price));
-  S.flash = pool.concat(rest).slice(0, 10);
-  // akhir flash sale: tengah malam hari ini + 1 hari
-  const d = new Date();
-  const end = new Date(d.getFullYear(), d.getMonth(), d.getDate()+1, 0, 0, 0, 0);
-  S.flashEnd = end.getTime();
-}
 function soldCount(p){
   // data dummy: turunan deterministik dari id, supaya stabil antar render
   return 12 + ((Number(p.id)||1) * 37) % 480;
@@ -551,24 +498,6 @@ function viewBeranda(){
     '<span><strong>Data contoh.</strong> Daftar proyek, testimoni, dan nama klien di halaman ini masih data dummy '+
     'dan akan diganti dengan konten klien asli. Harga &amp; stok produk juga data contoh.</span></div>' +
 
-  '<section class="flash" aria-label="Flash Sale">' +
-    '<div class="flash-h">' +
-      '<span class="t">'+icon('bolt','ic-sm')+'Flash Sale</span>' +
-      '<span class="cd" id="countdown" aria-live="off"></span>' +
-    '</div>' +
-    '<div class="flash-scroll">' +
-      (S.loading && !S.flash.length ? skeletonCards(6) :
-       S.flash.map(p=>{
-          const d = disc(p.price,p.compare_price);
-          return '<div class="fcard" data-slug="'+esc(p.slug)+'" role="button" tabindex="0">'+
-            '<div class="ph">'+(d?'<span class="disc" style="position:absolute;top:0;left:0;background:#fff;color:var(--or);font-size:11px;font-weight:800;padding:3px 6px;border-bottom-right-radius:8px">-'+d+'%</span>':'')+
-            icon(productIcon(p),'ic big')+'</div>'+
-            '<div class="nm">'+esc(p.name)+'</div>'+
-            '<div class="pr">'+rp(p.price)+(p.compare_price?'<s>'+rp(p.compare_price)+'</s>':'')+'</div>'+
-          '</div>';
-       }).join('') || '<div class="empty" style="color:#fff">Belum ada produk flash sale.</div>') +
-    '</div>' +
-  '</section>' +
 
   '<section class="sec"><div class="card" style="margin:0 12px;max-width:1176px">' +
     '<div class="catgrid">' +
@@ -588,7 +517,7 @@ function viewBeranda(){
       perk('truck','Kirim Same Day','Stok gudang siap kirim hari ini untuk area Jabodetabek.') +
       perk('shieldcheck','Produk Original','Semua material bersertifikat SNI dan batch-homogen.') +
       perk('chat','Order via WhatsApp','Tanpa keranjang. Chat langsung, kontrak jadi lebih cepat.') +
-      perk('ruler','Bisa Borongan','Harga khusus untuk pembelian proyek dan kontraktor.') +
+      perk('ruler','Bisa Borongan','Pemesanan borongan untuk proyek dan kontraktor.') +
     '</div>' +
   '</section>' +
 
@@ -831,38 +760,23 @@ async function adminAct(method, kind, id, body){
 const TABS = [
   ['beranda','Beranda','home'],
   ['kategori','Kategori','grid'],
-  ['flashsale','Flash Sale','bolt'],
   ['pesan','Pesan','chat'],
   ['akun','Akun','user']
 ];
 function renderTabs(){
   const r = hashRoute();
   // S.activeTab menang kalau route-nya bukan route utama, supaya tab
-  // Pesan/Akun/Flash Sale tetap menyala meski tidak ada route sendiri.
+  // Pesan/Akun tetap menyala meski tidak ada route sendiri.
   let active = 'beranda';
   if (r === 'produk' || r === 'admin' || r === 'kategori') active = r;
-  if (r === 'flashsale') active = 'flashsale';
-  // tab yang diklik (Pesan/Akun/Flash Sale) tetap menyala sampai navigasi lain
+  // tab yang diklik (Pesan/Akun) tetap menyala sampai navigasi lain
   if (S.activeTab && S.tabLock) active = S.activeTab;
   $('#tabbar').innerHTML = TABS.map(t=>
     '<button class="tab" role="tab" data-go="'+t[0]+'" aria-selected="'+(active===t[0])+'">' +
       icon(t[2])+'<span>'+t[1]+'</span></button>').join('');
 }
 
-/* ══ countdown ══════════════════════════════════════════════ */
-function tick(){
-  const el = $('#countdown');
-  if (!el) return;
-  let ms = S.flashEnd - Date.now();
-  if (ms <= 0) { S.flashEnd = Date.now() + 86400000; ms = 86400000; }
-  const h = Math.floor(ms/3600000), m = Math.floor(ms%3600000/60000), s = Math.floor(ms%60000/1000);
-  const p2 = n => (n<10?'0':'')+n;
-  el.innerHTML =
-    '<span class="cd-box">'+p2(h)+'</span><span class="cd-sep">:</span>' +
-    '<span class="cd-box">'+p2(m)+'</span><span class="cd-sep">:</span>' +
-    '<span class="cd-box">'+p2(s)+'</span>';
-}
-setInterval(tick, 1000);
+
 
 /* ══ render ═════════════════════════════════════════════════ */
 function render(){
@@ -878,7 +792,6 @@ function render(){
   renderTabs();
   renderChips();
   bindView();
-  tick();
 }
 function renderChips(){
   const cats = ['Semua'].concat(S.categories);
@@ -888,7 +801,7 @@ function renderChips(){
 
 /* ══ event wiring ═══════════════════════════════════════════ */
 function bindView(){
-  // kartu produk / flash card
+  // kartu produk
   $$('[data-slug]').forEach(el=>{
     el.addEventListener('click', ()=> modalProduct(el.getAttribute('data-slug')));
     if (el.getAttribute('role') === 'button') {
@@ -1023,7 +936,7 @@ $('#fabWa').addEventListener('click', ()=>{
 $('#tabbar').addEventListener('click', e=>{
   const b = e.target.closest('[data-go]'); if (!b) return;
   const t = b.getAttribute('data-go');
-  S.activeTab = t; S.tabLock = (t === 'pesan' || t === 'akun' || t === 'flashsale');
+  S.activeTab = t; S.tabLock = (t === 'pesan' || t === 'akun');
   if (t === 'kategori'){ S.cat='Semua'; location.hash = '#kategori'; return; }
   if (t === 'pesan'){
     renderTabs();
@@ -1043,13 +956,6 @@ $('#tabbar').addEventListener('click', e=>{
       '<button class="btn ghost block" style="margin-top:8px" data-close="1">Tutup</button>');
     return;
   }
-  if (t === 'flashsale'){
-    // dari route mana pun: balik ke beranda dulu, lalu gulir ke strip flash sale
-    const go = () => { const f = document.querySelector('.flash'); if (f) f.scrollIntoView({ behavior:'smooth', block:'start' }); };
-    if (hashRoute() === 'beranda') go();
-    else { pendingFlash = true; location.hash = '#beranda'; }
-    return;
-  }
   location.hash = '#' + t;
 });
 /* tombol tutup di modal */
@@ -1064,11 +970,6 @@ window.addEventListener('hashchange', ()=>{
   if (r === 'kategori'){ const c = hashQuery().get('cat'); if (c) S.cat = c; }
   render();
   window.scrollTo(0,0);
-  if (pendingFlash && r === 'beranda'){
-    pendingFlash = false;
-    S.activeTab = 'flashsale'; S.tabLock = true; renderTabs();
-    requestAnimationFrame(()=>{ const f = document.querySelector('.flash'); if (f) f.scrollIntoView({ behavior:'smooth', block:'start' }); });
-  }
 });
 
 /* start */

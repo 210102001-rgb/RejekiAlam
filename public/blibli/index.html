@@ -232,7 +232,7 @@ h1,h2,h3,h4{margin:0;line-height:1.25;letter-spacing:-.01em}
 .band-navy .sec-title{color:#fff}
 .band-navy .sec-sub{color:#A9BCEB}
 
-/* ---------- promo tiles (corporate campaign tiles) ---------- */
+/* ---------- category tiles ---------- */
 .tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 @media (min-width:768px){ .tiles{grid-template-columns:repeat(3,1fr);gap:16px} }
 .tile{
@@ -776,7 +776,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:13px;min-width:560px}
   <div class="utilbar">
     <div class="util-inner">
       <nav class="util-links" aria-label="Tautan utilitarian">
-        <a href="#produk?sort=price_asc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 20V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>Promo</a>
+        <a href="#produk?sort=price_asc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 20V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>Produk</a>
         <a href="#bantuan"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 0 1 4.9.7c0 1.7-2.4 2-2.4 3.3M12 17h.01"/></svg>Bantuan</a>
         <a href="#lacak"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/></svg>Lacak Kiriman</a>
       </nav>
@@ -999,23 +999,23 @@ const CAT_META = {
   'Umum':          { ic: 'box',     label: 'Lainnya',            blurb: 'Material pendukung' }
 };
 const PROMO_TILES = [
-  { c: 1, ic: 'percent', t: 'Promo Grosir Semester Ini',
-    d: 'Beli minimal 50 sak, harga khusus untuk kontraktor.', cat: 'Mortar',
+  { c: 1, ic: 'layers', t: 'Mortar Instan',
+    d: 'Plester dan acian siap pakai, tanpa campur manual.', cat: 'Mortar',
     go: 'Lihat Mortar' },
-  { c: 2, ic: 'truck',   t: 'Gratis Ongkir Seluruh Jawa',
-    d: 'Berlaku untuk pembelian di atas Rp 3.000.000 ke kota tier-1.', cat: '',
+  { c: 2, ic: 'truck',   t: 'Pengiriman Area Jawa',
+    d: 'Dikirim dari gudang kami ke kota tier-1.', cat: '',
     go: 'Belanja Sekarang' },
-  { c: 3, ic: 'zap',      t: 'Stok Gudang Terbarui',
-    d: 'Cek ketersediaan material proyek Anda hari ini juga.', cat: 'Waterproofing',
+  { c: 3, ic: 'box',     t: 'Stok Gudang',
+    d: 'Cek ketersediaan material proyek Anda hari ini.', cat: 'Waterproofing',
     go: 'Cek Stok' },
   { c: 4, ic: 'shield',  t: 'Produk Terverifikasi SNI',
     d: 'Setiap batch disertai sertifikat SNI dan nomor batch.', cat: 'Aksesoris',
     go: 'Lihat Aksesoris' },
-  { c: 5, ic: 'layers',  t: 'Paket Beton Cor',
+  { c: 5, ic: 'grid',    t: 'Paket Beton Cor',
     d: 'Semen, pasir silika, dan wire mesh dalam satu paket.', cat: 'Mortar',
     go: 'Paket Beton' },
-  { c: 6, ic: 'brush',   t: 'Cat Interior Anti Bau',
-    d: 'Warna baru dua dozen, coverage sampai 10 m2/kg.', cat: 'Cat',
+  { c: 6, ic: 'brush',   t: 'Cat Interior',
+    d: 'Cat lateks interior,coverage sampai 10 m2/kg.', cat: 'Cat',
     go: 'Lihat Cat' }
 ];
 const TRUST = [
@@ -1190,7 +1190,7 @@ function trustHTML() {
 function tilesHTML() {
   return '<section class="sec"><div class="wrap">' +
     '<div class="sec-head"><div><h2 class="sec-title">Kanopi <span>Kategori Bets</span></h2>' +
-    '<p class="sec-sub">Program campaign material bangunan yang sedang berjalan. Klik tile untuk langsung menuju kategori terkait.</p></div>' +
+    '<p class="sec-sub">Ringkasan material per kategori. Klik tile untuk langsung melihat produknya.</p></div>' +
     '</div><div class="tiles">' + PROMO_TILES.map(t =>
       '<a class="tile tile-' + t.c + '" href="' + (t.cat ? '#produk?cat=' + encodeURIComponent(t.cat) : '#produk') + '">' +
         '<span class="tile-art">' + svg(t.ic, 140, '', 1.2) + '</span>' +

@@ -198,20 +198,6 @@ section{scroll-margin-top:calc(var(--topbar-h) + var(--safe-t) + 8px)}
 @media(min-width:640px){ .cat-grid{grid-template-columns:repeat(4,1fr);gap:14px} .cat-tile b{font-size:14px} .cat-tile small{font-size:11.5px} }
 @media(min-width:1000px){ .cat-grid{grid-template-columns:repeat(8,1fr)} }
 
-/* ---------- promo strip ---------- */
-.vouchers{display:grid;grid-template-columns:1fr;gap:10px}
-.voucher{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:var(--r-lg);border:1px solid var(--line);background:#fff;box-shadow:var(--sh);min-height:64px;text-align:left;min-width:0}
-.voucher .v-ic{width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
-.voucher b{display:block;font-size:13.5px}
-.voucher span{font-size:11.5px;color:var(--muted);display:block;line-height:1.35}
-.voucher .v-go{margin-left:auto;color:#A9B2AC;flex:0 0 auto}
-.v-green .v-ic{background:var(--green-l);color:var(--green-d)}
-.v-orange{background:var(--orange-l);border-color:#FFD9C9}
-.v-orange .v-ic{background:#FFE0D2;color:var(--orange)}
-.v-orange b{color:var(--orange)}
-@media(min-width:700px){ .vouchers{grid-template-columns:repeat(3,1fr)} }
-@media(max-width:399px){ .voucher .v-go{display:none} }
-
 /* ---------- product cards ---------- */
 .p-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 @media(min-width:640px){ .p-grid{grid-template-columns:repeat(3,1fr);gap:12px} }
@@ -515,13 +501,13 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);margin-top:34px;p
     </div>
   </div>
 
-  <!-- promo carousel -->
+  <!-- sorotan produk -->
   <div class="wrap" style="padding-top:12px">
-    <div class="carousel" id="carousel" aria-roledescription="carousel" aria-label="Promo campaign">
+    <div class="carousel" id="carousel" aria-roledescription="carousel" aria-label="Sorotan produk">
       <div class="car-track" id="carTrack"></div>
-      <button class="car-arrow prev" id="carPrev" aria-label="Promo sebelumnya"><svg class="ic ic-sm" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
-      <button class="car-arrow next" id="carNext" aria-label="Promo berikutnya"><svg class="ic ic-sm" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
-      <div class="car-dots" id="carDots" role="tablist" aria-label="Pilih promo"></div>
+      <button class="car-arrow prev" id="carPrev" aria-label="Slide sebelumnya"><svg class="ic ic-sm" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <button class="car-arrow next" id="carNext" aria-label="Slide berikutnya"><svg class="ic ic-sm" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+      <div class="car-dots" id="carDots" role="tablist" aria-label="Pilih slide"></div>
     </div>
 
     <!-- trust markers -->
@@ -546,29 +532,8 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);margin-top:34px;p
     </div>
   </section>
 
-  <!-- promo strip -->
-  <section class="sec">
-    <div class="wrap">
-      <div class="sec-head"><h2 class="sec-title">Voucher &amp; Promo</h2></div>
-      <div class="vouchers">
-        <button class="voucher v-green" data-promo="voucher">
-          <span class="v-ic"><svg class="ic" viewBox="0 0 24 24"><path d="M4 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4z"/><path d="M9 9l6 6M15 9l-6 6" stroke-dasharray="0"/></svg></span>
-          <span style="min-width:0"><b>Voucher Material 15%</b><span>Potongan untuk pembelian di atas Rp 500.000</span></span>
-          <svg class="ic ic-sm v-go" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
-        </button>
-        <button class="voucher v-green" data-promo="ongkir">
-          <span class="v-ic"><svg class="ic" viewBox="0 0 24 24"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg></span>
-          <span style="min-width:0"><b>Gratis Ongkir</b><span>Minimum belanja Rp 1.000.000 area Jabodetabek</span></span>
-          <svg class="ic ic-sm v-go" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
-        </button>
-        <button class="voucher v-orange" data-promo="flash">
-          <span class="v-ic"><svg class="ic" viewBox="0 0 24 24"><path d="M13 2L4.5 13.5H11L9.5 22 19 10h-6.5z"/></svg></span>
-          <span style="min-width:0"><b>Flash Sale</b><span>Harga material khusus tiap hari, stok terbatas</span></span>
-          <svg class="ic ic-sm v-go" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
-        </button>
-      </div>
-    </div>
-  </section>
+  
+  
 
   <!-- products -->
   <section class="sec" id="produk-terlaris">
@@ -953,14 +918,14 @@ const S = {
 
 /* ══════════════ PROMO CAROUSEL ══════════════ */
 const SLIDES = [
-  { kicker: 'Flash Sale', title: 'Semen Portland 40 kg, harga khusus campaign', desc: 'Hemat untuk kebutuhan beton dan pasangan proyek Anda.', cta: 'Belanja Sekarang', bg: 'bg-1', art: ['cement', 'layer'], go: '#produk' },
-  { kicker: 'Gratis Ongkir', title: 'Belanja di atas Rp 1 juta, ongkir gratis', desc: 'Area Jabodetabek, Bandung, dan Semarang.', cta: 'Lihat Produk', bg: 'bg-2', art: ['truck', 'shield'], go: '#produk' },
-  { kicker: 'Voucher 15%', title: 'Voucher material untuk belanja di atas Rp 500.000', desc: 'Berlaku untuk mortar, cat, dan waterproofing.', cta: 'Pakai Voucher', bg: 'bg-3', art: ['tag', 'zap'], go: '#produk' }
+  { kicker: 'Mortar', title: 'Semen Portland 40 kg,siap pakai', desc: 'Sesuai SNI 15-2049 untuk beton dan pasangan.', cta: 'Lihat Produk', bg: 'bg-1', art: ['cement', 'layer'], go: '#produk' },
+  { kicker: 'Waterproofing', title: 'Pelapis lantai dan atap', desc: 'Polimer dua komponen untuk area basah dan atap.', cta: 'Lihat Produk', bg: 'bg-2', art: ['truck', 'shield'], go: '#produk' },
+  { kicker: 'Aksesoris', title: 'Perekat keramik dan sealant', desc: 'Untuk pemasangan keramik dan sambungan withstand.', cta: 'Lihat Produk', bg: 'bg-3', art: ['tag', 'zap'], go: '#produk' }
 ];
 function buildCarousel() {
   const track = $('#carTrack'), dots = $('#carDots');
   track.innerHTML = SLIDES.map((s, i) =>
-    '<div class="slide" role="group" aria-roledescription="slide" aria-label="Promo ' + (i + 1) + ' dari ' + SLIDES.length + '">' +
+    '<div class="slide" role="group" aria-roledescription="slide" aria-label="Slide ' + (i + 1) + ' dari ' + SLIDES.length + '">' +
       '<div class="slide-in ' + s.bg + '">' +
         '<div class="slide-art" aria-hidden="true">' +
           '<svg class="ic a1" viewBox="0 0 24 24">' + I[s.art[0]] + '</svg>' +
@@ -973,7 +938,7 @@ function buildCarousel() {
       '</div>' +
     '</div>').join('');
   dots.innerHTML = SLIDES.map((s, i) =>
-    '<button class="car-dot' + (i === 0 ? ' on' : '') + '" role="tab" aria-label="Promo ' + (i + 1) + '" data-i="' + i + '" aria-selected="' + (i === 0) + '"></button>').join('');
+    '<button class="car-dot' + (i === 0 ? ' on' : '') + '" role="tab" aria-label="Slide ' + (i + 1) + '" data-i="' + i + '" aria-selected="' + (i === 0) + '"></button>').join('');
   $$('.car-dot', dots).forEach(d => d.addEventListener('click', () => { goCar(+d.dataset.i, true); }));
   $('#carPrev').addEventListener('click', () => goCar(S.carIdx - 1, true));
   $('#carNext').addEventListener('click', () => goCar(S.carIdx + 1, true));
@@ -1270,13 +1235,6 @@ $('#topsearch').addEventListener('submit', e => {
 $('#fq').addEventListener('input', e => { S.f.q = e.target.value; debouncedCat(); });
 $('#fqClear').addEventListener('click', () => { S.f.q = ''; $('#fq').value = ''; $('#q').value = ''; debouncedCat(); });
 $('#fsort').addEventListener('change', e => { S.f.sort = e.target.value; loadCatalogue(); });
-$$('.voucher').forEach(v => v.addEventListener('click', () => {
-  const k = v.dataset.promo;
-  toast(k === 'voucher' ? 'Voucher dikirim via WhatsApp setelah konfirmasi' :
-        k === 'ongkir' ? 'Gratis ongkir untuk pembelian di atas Rp 1 juta' :
-        'Flash sale diperbarui setiap hari — cek produk di katalog');
-  if (k === 'flash') { location.hash = '#produk'; }
-}));
 $('#cartBtn').addEventListener('click', () => {
   window.open(waLink('Halo Rejeki Alam, saya mau tanya stok dan harga material bangunan.'), '_blank', 'noopener');
 });
