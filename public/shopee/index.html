@@ -221,6 +221,61 @@
   a[href],button{min-height:40px}
   a.brand,a.logo{min-height:40px}
 }
+
+/* ── product grid: layout fix ──────────────────────────────────────────
+   .pgrid was missing display:grid and its cards inherited flex:1 1 0,
+   which squeezed 10 cards into a 97px column. This block is last so it
+   overrides whatever came before, at every width. */
+.pgrid, .plist{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:0 !important; padding:0 0 14px !important;
+}
+.pgrid > *, .plist > *{width:auto !important;flex:none !important;min-width:0 !important}
+.pgrid > .pcard, .plist > .pcard{
+  border-left:.5px solid rgba(0,0,0,.09) !important;
+  border-right:.5px solid rgba(0,0,0,.09) !important;
+  border-bottom:.5px solid rgba(0,0,0,.09) !important;
+}
+.pgrid > .pcard:nth-child(2n), .plist > .pcard:nth-child(2n){border-right:0 !important}
+@media(min-width:700px){
+  .pgrid, .plist{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
+  .pgrid > .pcard:nth-child(2n), .plist > .pcard:nth-child(2n){border-right:.5px solid rgba(0,0,0,.09) !important}
+  .pgrid > .pcard:nth-child(3n), .plist > .pcard:nth-child(3n){border-right:0 !important}
+}
+@media(min-width:1040px){
+  .pgrid, .plist{grid-template-columns:repeat(4,minmax(0,1fr)) !important}
+  .pgrid > .pcard:nth-child(3n), .plist > .pcard:nth-child(3n){border-right:.5px solid rgba(0,0,0,.09) !important}
+  .pgrid > .pcard:nth-child(4n), .plist > .pcard:nth-child(4n){border-right:0 !important}
+}
+
+/* ── tab bar: bottom sheet on mobile, floating pill on desktop ───────────
+   Without a desktop rule the bar stayed left:0;right:0 and stretched the
+   full page width, which reads as a mobile bar bleeding onto desktop. */
+@media(min-width:900px){
+  .tabbar{
+    left:50%;right:auto;bottom:22px;transform:translateX(-50%);
+    width:auto;max-width:min(560px,calc(100vw - 40px));
+    grid-template-columns:repeat(5,auto);
+    justify-content:center;align-items:center;
+    gap:6px;padding:8px 12px;
+    border:1px solid var(--line);border-radius:999px;
+    box-shadow:0 6px 24px rgba(16,24,20,.14);
+  }
+  .tabbar::before{
+    content:"";position:absolute;inset:-22px -40px -30px;
+    pointer-events:none;
+  }
+  .tabbar a,.tabbar button{
+    padding:0 16px;border-radius:999px;
+    min-width:0;justify-content:center;
+  }
+  /* the floating WhatsApp pill would sit on top of the tab bar on desktop */
+  .wa-fab,.fab{right:24px;bottom:24px}
+  /* reserve room so the fixed pill never covers the last product row */
+  body{padding-bottom:112px}
+  .tabbar{pointer-events:auto}
+}
 </style>
 </head>
 <body>
