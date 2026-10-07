@@ -527,8 +527,8 @@ table.tbl tr:last-child td{border-bottom:0}
    ══════════════════════════════════════════════════════════════════════ */
 const WHATSAPP_NUMBER = '6281234567890';
 
-/* API base — the katalog app mounts its API under /katalog/api */
-const API_BASE = location.origin + '/katalog/api';
+/* API base — the katalog app mounts its API under /api */
+const API_BASE = new URL("../api", location.href).href.replace(/\/$/, "");
 
 /* ── tiny helpers ───────────────────────────────────────────────────── */
 const $  = (id) => document.getElementById(id);
