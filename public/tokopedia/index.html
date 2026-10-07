@@ -172,7 +172,7 @@ section{scroll-margin-top:calc(var(--topbar-h) + var(--safe-t) + 8px)}
 .car-dot.on::after{width:16px;background:#fff}
 .car-arrow{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:999px;background:rgba(255,255,255,.9);color:var(--green-d);display:none;align-items:center;justify-content:center;box-shadow:var(--sh);z-index:2}
 .car-arrow.prev{left:10px}.car-arrow.next{right:10px}
-@media(min-width:900px){ .car-arrow{display:flex} .slide,.slide-in{min-height:230px} .slide-title{font-size:30px} .slide-desc{font-size:14.5px} }
+@media(min-width:900px){ .car-arrow{display:flex} .slide,.slide-in{min-height:230px} .slide-in{padding:26px 78px} .slide-title{font-size:30px;max-width:26ch} .slide-desc{font-size:14.5px} }
 @media(min-width:1200px){ .slide,.slide-in{min-height:280px} }
 
 /* ---------- trust strip ---------- */
@@ -815,7 +815,7 @@ footer{background:var(--bg-2);border-top:1px solid var(--line);margin-top:34px;p
    REJEKI ALAM — marketplace frontend
    Single file, vanilla JS, hash routing, no dependencies.
    ═══════════════════════════════════════════════════════════ */
-const API_BASE = location.origin + '/katalog/api';
+const API_BASE = new URL("../api", location.href).href.replace(/\/$/, "");
 const WHATSAPP_NUMBER = '6281234567890';
 
 /* ---------- tiny helpers ---------- */
@@ -932,9 +932,9 @@ const S = {
 
 /* ══════════════ PROMO CAROUSEL ══════════════ */
 const SLIDES = [
-  { kicker: 'Mortar', title: 'Semen Portland 40 kg,siap pakai', desc: 'Sesuai SNI 15-2049 untuk beton dan pasangan.', cta: 'Lihat Produk', bg: 'bg-1', art: ['cement', 'layer'], go: '#produk' },
+  { kicker: 'Mortar', title: 'Semen Portland 40 kg, siap pakai', desc: 'Sesuai SNI 15-2049 untuk beton dan pasangan.', cta: 'Lihat Produk', bg: 'bg-1', art: ['cement', 'layer'], go: '#produk' },
   { kicker: 'Waterproofing', title: 'Pelapis lantai dan atap', desc: 'Polimer dua komponen untuk area basah dan atap.', cta: 'Lihat Produk', bg: 'bg-2', art: ['truck', 'shield'], go: '#produk' },
-  { kicker: 'Aksesoris', title: 'Perekat keramik dan sealant', desc: 'Untuk pemasangan keramik dan sambungan withstand.', cta: 'Lihat Produk', bg: 'bg-3', art: ['tag', 'zap'], go: '#produk' }
+  { kicker: 'Aksesoris', title: 'Perekat keramik dan sealant', desc: 'Untuk pemasangan keramik dan sambungan yang tahan lama.', cta: 'Lihat Produk', bg: 'bg-3', art: ['tag', 'zap'], go: '#produk' }
 ];
 function buildCarousel() {
   const track = $('#carTrack'), dots = $('#carDots');
