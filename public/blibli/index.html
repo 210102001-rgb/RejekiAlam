@@ -940,7 +940,7 @@ table.tbl{width:100%;border-collapse:collapse;font-size:13px;min-width:560px}
    Single file, vanilla JS, hash routing, no external resources.
    ═══════════════════════════════════════════════════════════════════════════ */
 
-const API_BASE = location.origin + '/katalog/api';
+const API_BASE = new URL("../api", location.href).href.replace(/\/$/, "");
 const WHATSAPP_NUMBER = '6281234567890';
 
 const SORTS = [
