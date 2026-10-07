@@ -1105,15 +1105,15 @@ function techProj(title, size){
 
 
 /**
- * Basis API tunggal. Backend katalog dilayani di /katalog/api
+ * Basis API tunggal. Backend katalog dilayani di /api
  * baik dari akar domain maupun dari sub-path /katalog-c/.
  */
 var API_BASE = (function () {
   var path = window.location.pathname || '/';
-  // /katalog-c/ atau /katalog-c/index.html -> /katalog/api
+  // /katalog-c/ atau /katalog-c/index.html -> /api
   var m = path.match(/^(.*\/katalog)\//);
   if (m) return m[1] + '/api';
-  return window.location.origin + '/katalog/api';
+  return window.location.origin + '/api';
 })();
 
 var NAV = [
