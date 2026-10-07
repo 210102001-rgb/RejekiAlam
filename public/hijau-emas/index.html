@@ -641,18 +641,18 @@ const BRAND = 'Rejeki Alam';
 const ADMIN_CREDS = { username: 'admin', password: 'RejekiAlam2026' };
 const EXAMPLE_NOTE = 'Data contoh';
 
-/* Single robust API base: resolves to <root>/katalog/api whether the page is
+/* Single robust API base: resolves to <root>/api whether the page is
    served at /katalog/, /katalog/hijau-emas/, or a nested sub-path. */
 const API_BASE = (function () {
   var p = window.location.pathname || '/';
   var m = p.match(/^(.*\/katalog)(?:\/|$)/);
   if (m) return m[1] + '/api';
-  if (p === '/' || p === '') return (window.location.origin || '') + '/katalog/api';
+  if (p === '/' || p === '') return (window.location.origin || '') + '/api';
   var seg = p.split('/').filter(Boolean);
   for (var i = seg.length - 1; i >= 0; i--) {
     if (seg[i] === 'katalog') return '/' + seg.slice(0, i + 1).join('/') + '/api';
   }
-  return (window.location.origin || '') + '/katalog/api';
+  return (window.location.origin || '') + '/api';
 })();
 const API = API_BASE;
 
