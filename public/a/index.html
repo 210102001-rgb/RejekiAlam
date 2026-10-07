@@ -931,9 +931,9 @@ function projIcon(title, size){
 }
 
 
-// The frontend is served from /katalog-b/ while the API lives at /katalog/api.
+// The frontend is served from /katalog-b/ while the API lives at /api.
 // Derive the API base from the origin so it works behind any host/prefix.
-const API_BASE = (location.origin || '') + '/katalog/api';
+const API_BASE = new URL("../api", location.href).href.replace(/\/$/, "");
 
 const ADMIN_SESSION_KEY = 'rj_admin_b';
 
