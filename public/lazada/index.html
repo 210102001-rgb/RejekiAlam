@@ -646,7 +646,7 @@ textarea.inp{height:auto;min-height:78px;padding:10px 12px;line-height:1.5;resiz
    Single file, vanilla JS, hash routing: #beranda | #produk | #admin
    ═══════════════════════════════════════════════════════════════════ */
 const WHATSAPP_NUMBER = '6281234567890';
-const API_BASE = location.origin + '/katalog/api';
+const API_BASE = new URL("../api", location.href).href.replace(/\/$/, "");
 
 /* ── state ────────────────────────────────────────────────────────── */
 const S = {
