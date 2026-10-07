@@ -8,7 +8,7 @@
 <style>
   :root{
     --or:#14684A; --or-d:#0E5439; --or-l:#1B8A63;
-    --grn:#C08A2E; --grn-d:#9A6B1E;
+    --grn:#00BFA5; --grn-d:#00897A;
     --page:#FFFFFF; --ink:#1A1A1A; --ink2:#6B6659; --ink3:#5F5B50;
     --line:#E6E1D6; --card:#FFFFFF;
     --r:10px; --r2:12px;
@@ -70,6 +70,47 @@
     display:inline-flex;align-items:center;gap:6px}
   .chip[aria-pressed="true"]{background:#fff;color:var(--or)}
 
+  /* ── strip kategori (icon tiles) ────────────────────────── */
+  .catgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;padding:12px}
+  .cat{display:flex;flex-direction:column;align-items:center;gap:8px;background:transparent;border:0;
+    cursor:pointer;padding:10px 4px;border-radius:12px;min-width:0}
+  .cat .ci{width:56px;height:56px;border-radius:50%;background:#e9f3ee;display:grid;place-items:center;
+    transition:transform .15s ease}
+  .cat .ci svg{width:28px;height:28px}
+  .cat .cn{font-size:12px;font-weight:600;color:var(--ink2);text-align:center;line-height:1.3;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+  .cat:hover .ci{transform:translateY(-2px)}
+  .cat:active .ci{transform:scale(.94)}
+
+  /* ── flash sale (Shopee) ──────────────────────────────── */
+  .flash{background:linear-gradient(180deg,#0E5439,#1B8A63);border-radius:12px;
+    margin:4px 12px 0;max-width:1176px;overflow:hidden}
+  @media(min-width:1200px){.flash{margin-inline:auto}}
+  .flash-h{display:flex;align-items:center;gap:8px;padding:12px 14px;color:#fff}
+  .flash-h b{font-size:15px;letter-spacing:1px}
+  .flash-h .ic-sm{color:#FFE082}
+  .cd{display:flex;align-items:center;gap:3px;margin-left:6px}
+  .cd span{background:#fff;color:#0E5439;font-weight:800;font-size:12px;padding:3px 6px;
+    border-radius:4px;min-width:27px;text-align:center}
+  .cd i{font-style:normal;color:#fff;font-weight:800}
+  .fmore{margin-left:auto;color:#fff;font-size:12.5px;font-weight:600;display:inline-flex;
+    align-items:center;gap:2px;min-height:40px}
+  .flash-row{display:flex;gap:10px;overflow-x:auto;padding:2px 14px 14px;scrollbar-width:none}
+  .flash-row::-webkit-scrollbar{display:none}
+  .fcard{flex:0 0 130px;background:#fff;border:0;border-radius:8px;overflow:hidden;cursor:pointer;
+    padding:0;text-align:left;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+  .fph{position:relative;aspect-ratio:1/1;background:#f7f7f7;display:grid;place-items:center}
+  .fph .big{width:44%;height:44%;color:#d5d5d5}
+  .fdisc{position:absolute;top:0;right:0;background:#EE4D2D;color:#fff;font-size:10.5px;
+    font-weight:800;padding:2px 6px;border-bottom-left-radius:8px}
+  .fp{display:block;color:#0E5439;font-weight:700;font-size:13.5px;padding:6px 8px 3px}
+  .fbar{position:relative;display:block;height:16px;background:#d9e9e2;border-radius:999px;
+    margin:0 8px 8px;overflow:hidden}
+  .fbar span{position:absolute;top:0;bottom:0;left:0;background:linear-gradient(90deg,#14684A,#1B8A63);
+    border-radius:999px}
+  .fbar em{position:absolute;inset:0;display:grid;place-items:center;font-style:normal;
+    font-size:9.5px;font-weight:700;color:#0b3d28}
+
   /* ── sections ─────────────────────────────────────────── */
   .sec{margin-top:10px}
   .sec-h{display:flex;align-items:center;gap:8px;padding:12px 12px 8px;max-width:1200px;margin:0 auto}
@@ -82,26 +123,27 @@
     display:flex;gap:8px;align-items:flex-start}
   .note .ic-sm{margin-top:1px;color:#F5A623}
 
-  card:nth-child(3n){border-right:.5px solid rgba(0,0,0,.09)}
+  .pgrid > .pcard:nth-child(3n){border-right:.5px solid rgba(0,0,0,.09)}
     .pgrid > .pcard:nth-child(4n){border-right:0}
   }
   .pgrid > *{min-width:0}
-  .pcard{background:#fff;border-radius:0;box-shadow:none;overflow:hidden;cursor:pointer;
+  .pcard{background:#fff;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.09);border:1px solid #f1f1f1;overflow:hidden;cursor:pointer;
     display:flex;flex-direction:column;border:0;text-align:left;padding:0;min-width:0}
-  .pcard .ph{position:relative;aspect-ratio:1/1;background:#faf0ec;display:grid;place-items:center}
-  .pcard .ph .big{width:56%;height:56%;color:#8FB9A5}
-  .ph .disc{position:absolute;top:0;left:0;background:var(--or);color:#3A2A08;font-size:11px;font-weight:800;
-    padding:3px 7px;border-bottom-right-radius:8px;line-height:1.2}
-  .ph .sold{position:absolute;left:0;bottom:0;background:rgba(0,0,0,.55);color:#fff;font-size:10.5px;
-    padding:2px 7px;border-top-right-radius:8px}
-  .pmeta{padding:6px 7px 9px;display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
-  .pname{font-size:12px;line-height:1.28;height:31px;overflow:hidden;
+  .pcard .ph{position:relative;aspect-ratio:1/1;background:#f7f7f7;display:grid;place-items:center}
+  .pcard .ph .big{width:44%;height:44%;color:#d5d5d5}
+  .ph .disc{position:absolute;top:0;right:0;background:#EE4D2D;color:#fff;font-size:11px;font-weight:800;
+    padding:3px 7px;border-bottom-left-radius:8px;line-height:1.2}
+  .pmeta{padding:8px;display:flex;flex-direction:column;gap:3px;flex:1;min-width:0}
+  .pname{font-size:12px;line-height:1.3;height:31px;overflow:hidden;color:#222;
     display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .pprice{font-weight:800;color:var(--or);font-size:14.5px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .pprice s{color:var(--ink3);font-weight:400;font-size:10.5px;margin-left:4px}
-  .punit{font-size:10.5px;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .pstock{font-size:10px;color:var(--grn);font-weight:600;margin-top:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .pstock.low{color:var(--or)}
+  .pprice{font-weight:700;color:var(--or);font-size:16px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pprice .rp{font-size:11px;font-weight:700}
+  .pprice s{color:#999;font-weight:400;font-size:10.5px;margin-left:4px}
+  .prate{display:flex;align-items:center;gap:3px;font-size:10.5px;color:#777}
+  .prate .st{color:#F5A623;display:inline-flex}
+  .prate .st svg{width:11px;height:11px}
+  .prate i{font-style:normal;color:#ddd}
+  .ploc{font-size:10.5px;color:#999;margin-top:auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
   /* generic */
   .empty{padding:28px 16px;text-align:center;color:var(--ink2);font-size:13px}
@@ -229,24 +271,21 @@
 .pgrid, .plist{
   display:grid !important;
   grid-template-columns:repeat(2,minmax(0,1fr)) !important;
-  gap:0 !important; padding:0 0 14px !important;
+  gap:10px !important; padding:4px 12px 16px !important;
+  background:#f5f5f5;
 }
 .pgrid > *, .plist > *{width:auto !important;flex:none !important;min-width:0 !important}
-.pgrid > .pcard, .plist > .pcard{
-  border-left:.5px solid rgba(0,0,0,.09) !important;
-  border-right:.5px solid rgba(0,0,0,.09) !important;
-  border-bottom:.5px solid rgba(0,0,0,.09) !important;
-}
-.pgrid > .pcard:nth-child(2n), .plist > .pcard:nth-child(2n){border-right:0 !important}
+.pgrid > .pcard, .plist > .pcard{border:1px solid #f0f0f0 !important;border-radius:8px !important}
+.pgrid > .pcard:nth-child(2n), .plist > .pcard:nth-child(2n){border-right:1px solid #f0f0f0 !important}
 @media(min-width:700px){
   .pgrid, .plist{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
-  .pgrid > .pcard:nth-child(2n), .plist > .pcard:nth-child(2n){border-right:.5px solid rgba(0,0,0,.09) !important}
-  .pgrid > .pcard:nth-child(3n), .plist > .pcard:nth-child(3n){border-right:0 !important}
+  .pgrid > .pcard:nth-child(2n), .plist > .pcard:nth-child(2n){border-right:1px solid #f0f0f0 !important}
+  .pgrid > .pcard:nth-child(3n), .plist > .pcard:nth-child(3n){border-right:1px solid #f0f0f0 !important}
 }
 @media(min-width:1040px){
   .pgrid, .plist{grid-template-columns:repeat(4,minmax(0,1fr)) !important}
-  .pgrid > .pcard:nth-child(3n), .plist > .pcard:nth-child(3n){border-right:.5px solid rgba(0,0,0,.09) !important}
-  .pgrid > .pcard:nth-child(4n), .plist > .pcard:nth-child(4n){border-right:0 !important}
+  .pgrid > .pcard:nth-child(3n), .plist > .pcard:nth-child(3n){border-right:1px solid #f0f0f0 !important}
+  .pgrid > .pcard:nth-child(4n), .plist > .pcard:nth-child(4n){border-right:1px solid #f0f0f0 !important}
 }
 
 /* ── tab bar: bottom sheet on mobile, floating pill on desktop ───────────
@@ -335,7 +374,7 @@
 'use strict';
 
 /* ══ konfigurasi ══════════════════════════════════════════ */
-const API_BASE = location.origin + '/katalog/api';
+const API_BASE = new URL("../api", location.href).href.replace(/\/$/, "");
 const WHATSAPP_NUMBER = '6281234567890';
 const ADMIN_USER = 'admin';
 const ADMIN_PASS = 'RejekiAlam2026';
@@ -517,22 +556,54 @@ function soldCount(p){
 }
 
 /* ══ komponen ══════════════════════════════════════════════ */
+function ratingOf(p){ return ((46 + ((Number(p.id)||1)*13)%5)/10).toFixed(1); }
+/* ── flash sale ── */
+function flashList(){
+  return S.products
+    .map(p => ({ p, d: disc(p.price, p.compare_price) || 0 }))
+    .sort((a,b) => b.d - a.d || soldCount(b.p) - soldCount(a.p))
+    .slice(0, 8);
+}
+function flashSaleHTML(){
+  if (S.loading || !S.products.length) return '';
+  const items = flashList();
+  if (!items.length) return '';
+  return '<div class="flash"><div class="flash-h">' +
+    icon('bolt','ic-sm') + '<b>FLASH SALE</b>' +
+    '<span class="cd"><span id="cdH">00</span><i>:</i><span id="cdM">00</span><i>:</i><span id="cdS">00</span></span>' +
+    '<a class="fmore" href="#produk">Lihat Semua ' + icon('arrow','ic-sm') + '</a></div>' +
+    '<div class="flash-row">' + items.map(({p, d}) => {
+      const s = soldCount(p);
+      const pct = Math.min(96, Math.round(s / 5));
+      return '<button class="fcard" data-slug="' + esc(p.slug) + '" aria-label="Lihat detail ' + esc(p.name) + '">' +
+        '<span class="fph">' + icon(productIcon(p),'ic big') + '</span>' +
+        '<span class="fp">Rp' + Number(p.price || 0).toLocaleString('id-ID') + '</span>' +
+        '<span class="fbar"><span style="width:' + pct + '%"></span><em>Terjual ' + s + '</em></span>' +
+      '</button>';
+    }).join('') + '</div></div>';
+}
+function tickCd(){
+  const n = new Date(), e = new Date(n); e.setHours(23,59,59,999);
+  const s = Math.max(0, Math.floor((e - n) / 1000));
+  const H = document.getElementById('cdH'), M = document.getElementById('cdM'), S2 = document.getElementById('cdS');
+  if (H) H.textContent = String(Math.floor(s/3600)).padStart(2,'0');
+  if (M) M.textContent = String(Math.floor(s%3600/60)).padStart(2,'0');
+  if (S2) S2.textContent = String(s%60).padStart(2,'0');
+}
+setInterval(tickCd, 1000);
 function productCard(p){
-  const d = disc(p.price, p.compare_price);
   const s = soldCount(p);
-  const low = Number(p.stock) <= 10;
+  const r = ratingOf(p);
   return '' +
   '<button class="pcard" data-slug="'+esc(p.slug)+'" aria-label="Lihat detail '+esc(p.name)+'">' +
     '<span class="ph">' +
-      (d ? '<span class="disc">-'+d+'%</span>' : '') +
       icon(productIcon(p),'ic big') +
-      '<span class="sold">TERJUAL '+s+'</span>' +
     '</span>' +
     '<span class="pmeta">' +
       '<span class="pname">'+esc(p.name)+'</span>' +
-      '<span class="pprice">'+rp(p.price)+(p.compare_price?'<s>'+rp(p.compare_price)+'</s>':'')+'</span>' +
-      '<span class="punit">per '+esc(p.unit||'sak')+'</span>' +
-      '<span class="pstock'+(low?' low':'')+'">Stok '+(low?'menipis: ':'')+esc(p.stock)+' '+esc(p.unit||'sak')+'</span>' +
+      '<span class="pprice"><span class="rp">Rp</span>'+Number(p.price||0).toLocaleString('id-ID')+'</span>' +
+      '<span class="prate"><span class="st">'+icon('star')+'</span> '+r+' <i>|</i> Terjual '+s+'</span>' +
+      '<span class="ploc">Kab. Bekasi</span>' +
     '</span>' +
   '</button>';
 }
@@ -568,12 +639,14 @@ function viewBeranda(){
     'dan akan diganti dengan konten klien asli. Harga &amp; stok produk juga data contoh.</span></div>' +
 
 
-  '<section class="sec"><div class="card" style="margin:0 12px;max-width:1176px">' +
+  '<section class="sec"><div class="card" style="margin:0 auto;max-width:1176px;width:calc(100% - 24px)">' +
     '<div class="catgrid">' +
       cats.map(k=>'<button class="cat" data-cat="'+esc(k)+'" title="'+esc(k)+'"><span class="ci" style="color:'+(CAT_TINT[k]||'#14684A')+'">'+
         icon(CAT_ICON[k]||'box')+'</span><span class="cn">'+esc(catLabel(k))+'</span></button>').join('') +
     '</div>' +
   '</div></section>' +
+
+  '<section class="sec">' + flashSaleHTML() + '</section>' +
 
   '<section class="sec">' +
     '<div class="sec-h"><h2>Produk Terbaru</h2><a class="more" href="#produk">Lihat semua '+icon('arrow','ic-sm')+'</a></div>' +
