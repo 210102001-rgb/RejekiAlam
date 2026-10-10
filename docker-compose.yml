@@ -1,0 +1,19 @@
+services:
+  rejeki-cms:
+    build: .
+    image: rejeki-cms:latest
+    container_name: rejeki-cms
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3005:3005"
+    volumes:
+      - rejeki-data:/data
+      - ./public/uploads:/app/public/uploads
+    environment:
+      - PORT=3005
+      - REJEKI_DB_PATH=/data/rejeki.sqlite
+      # Ganti password admin awal via env saat pertama jalan:
+      - ADMIN_PASSWORD=admin123
+
+volumes:
+  rejeki-data:

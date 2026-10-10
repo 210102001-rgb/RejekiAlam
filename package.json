@@ -1,11 +1,1 @@
-{
-  "name": "katalog",
-  "version": "1.0.0",
-  "private": true,
-  "type": "module",
-  "scripts": { "start": "node server.mjs" },
-  "dependencies": {
-    "better-sqlite3": "^11.5.0",
-    "express": "^4.21.2"
-  }
-}
+{"dependencies":{"bcryptjs":"^2.4.3","cookie-parser":"^1.4.6","express":"^4.19.2","multer":"^1.4.5-lts.1"},"description":"Rejeki Alam — company profile + katalog produk + admin CMS (Express + SQLite)","main":"src/server.js","name":"rejeki-cms","scripts":{"start":"node src/server.js"},"version":"1.0.0"}
