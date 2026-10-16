@@ -136,6 +136,7 @@ section{padding:110px 0;scroll-margin-top:70px;position:relative}
 .chip.on{background:var(--pine);border-color:var(--pine);color:#fff}
 .catsec-h{display:flex;align-items:baseline;gap:10px;margin:26px 0 12px}.catsec-h h2{font-size:22px;margin:0}.catsec-h span{color:#6B756D;font-size:13px}.pgrid-in{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pgrid.is-sections{display:block}
 .pcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s;animation:cardIn .55s cubic-bezier(.22,.8,.24,1) backwards}
 .pcard:hover{transform:translateY(-6px);box-shadow:var(--sh)}
 @keyframes cardIn{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
@@ -397,6 +398,7 @@ function render(){
   document.getElementById('count').textContent=list.length+' produk ditemukan';
   document.getElementById('empty').hidden=list.length>0;
   if(f==='all'&&!q.value.trim()){
+    grid.classList.add('is-sections');
     let h='';
     for(const c of CATS){
       const items=list.filter(p=>p.category===c.slug);
@@ -409,6 +411,7 @@ function render(){
     }
     grid.innerHTML=h;
   } else {
+    grid.classList.remove('is-sections');
     grid.innerHTML=list.map(pcard).join('');
   }
 }
