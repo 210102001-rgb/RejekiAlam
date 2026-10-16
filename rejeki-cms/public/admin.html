@@ -483,17 +483,6 @@ async function loadPrices(){
       <button class="ibtn" onclick="editH(${r.id})">Ubah</button>
       <button class="ibtn danger" onclick="delH(${r.id})">Hapus</button>
     </div></td></tr>`).join('');
-  pages=Math.max(1,Math.ceil(total/PPER));
-  let h=`<span class="pinfo">Menampilkan ${total?((PPAGE-1)*PPER+1):0}&ndash;${Math.min(PPAGE*PPER,total)} dari ${total} produk</span>`;
-  h+=`<button ${PPAGE<=1?'disabled':''} onclick="pGo(${PPAGE-1})">&lsaquo;</button>`;
-  for(let i=1;i<=pages;i++){ if(i===1||i===pages||Math.abs(i-PPAGE)<=1){ h+=`<button class="${i===PPAGE?'on':''}" onclick="pGo(${i})">${i}</button>`; } }
-  h+=`<button ${PPAGE>=pages?'disabled':''} onclick="pGo(${PPAGE+1})">&rsaquo;</button>`;
-  $('pPager').innerHTML=h;
-}
-function pGo(n){ PPAGE=n; renderPRows(); }
-async function loadProducts(){
-  PRODUCTS=await api('api/admin/products');
-  PPAGE=1; renderPRows();
 }
 function hForm(r){
   r=r||{};
@@ -559,17 +548,6 @@ async function loadCats(){
       <button class="ibtn" onclick="editC('${c.slug}')">Ubah</button>
       ${c.slug==='lainnya'?'':'<button class="ibtn danger" onclick="delC(\''+c.slug+'\')">Hapus</button>'}
     </div></td></tr>`).join('');
-  pages=Math.max(1,Math.ceil(total/PPER));
-  let h=`<span class="pinfo">Menampilkan ${total?((PPAGE-1)*PPER+1):0}&ndash;${Math.min(PPAGE*PPER,total)} dari ${total} produk</span>`;
-  h+=`<button ${PPAGE<=1?'disabled':''} onclick="pGo(${PPAGE-1})">&lsaquo;</button>`;
-  for(let i=1;i<=pages;i++){ if(i===1||i===pages||Math.abs(i-PPAGE)<=1){ h+=`<button class="${i===PPAGE?'on':''}" onclick="pGo(${i})">${i}</button>`; } }
-  h+=`<button ${PPAGE>=pages?'disabled':''} onclick="pGo(${PPAGE+1})">&rsaquo;</button>`;
-  $('pPager').innerHTML=h;
-}
-function pGo(n){ PPAGE=n; renderPRows(); }
-async function loadProducts(){
-  PRODUCTS=await api('api/admin/products');
-  PPAGE=1; renderPRows();
 }
 async function loadSubs(){
   SUBS=await api('api/admin/subcategories');
@@ -579,17 +557,6 @@ async function loadSubs(){
       <button class="ibtn" onclick="editS('${s.slug}')">Ubah</button>
       <button class="ibtn danger" onclick="delS('${s.slug}')">Hapus</button>
     </div></td></tr>`).join('');
-  pages=Math.max(1,Math.ceil(total/PPER));
-  let h=`<span class="pinfo">Menampilkan ${total?((PPAGE-1)*PPER+1):0}&ndash;${Math.min(PPAGE*PPER,total)} dari ${total} produk</span>`;
-  h+=`<button ${PPAGE<=1?'disabled':''} onclick="pGo(${PPAGE-1})">&lsaquo;</button>`;
-  for(let i=1;i<=pages;i++){ if(i===1||i===pages||Math.abs(i-PPAGE)<=1){ h+=`<button class="${i===PPAGE?'on':''}" onclick="pGo(${i})">${i}</button>`; } }
-  h+=`<button ${PPAGE>=pages?'disabled':''} onclick="pGo(${PPAGE+1})">&rsaquo;</button>`;
-  $('pPager').innerHTML=h;
-}
-function pGo(n){ PPAGE=n; renderPRows(); }
-async function loadProducts(){
-  PRODUCTS=await api('api/admin/products');
-  PPAGE=1; renderPRows();
 }
 function cForm(c){
   c=c||{};
