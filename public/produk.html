@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Katalog Produk — Rejeki Alam</title><style>
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><link rel="icon" type="image/png" href="images/logo-emblem.png"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Katalog Produk — Rejeki Alam</title><style>
 *{margin:0;padding:0;box-sizing:border-box}
 [hidden]{display:none !important}
 :root{
@@ -57,7 +57,7 @@ section{padding:110px 0;scroll-margin-top:70px;position:relative}
 .nav-in{display:flex;align-items:center;gap:34px;height:72px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);font-weight:800;font-size:18px;letter-spacing:-.02em;white-space:nowrap}
 .brand small{display:block;font-size:10px;font-weight:700;color:var(--ink3);letter-spacing:.18em}
-.brand-mark{width:40px;height:40px;border-radius:12px;background:var(--pine);display:grid;place-items:center;color:var(--gold2);flex:none}
+.brand-mark{width:44px;height:44px;display:grid;place-items:center;flex:none;background:transparent}.brand-logo{height:48px;width:auto;display:block}
 .nav-links{display:flex;gap:26px;margin-left:auto}
 .nav-links a{text-decoration:none;color:var(--ink2);font-weight:600;font-size:14.5px;transition:color .2s}
 .nav-links a:hover{color:var(--pine)}
@@ -134,7 +134,9 @@ section{padding:110px 0;scroll-margin-top:70px;position:relative}
 .chip{border:1.5px solid var(--line);background:transparent;padding:11px 22px;border-radius:999px;font-weight:700;font-size:14px;cursor:pointer;color:var(--ink2);transition:.22s;font-family:var(--font)}
 .chip:hover{border-color:var(--pine);color:var(--pine)}
 .chip.on{background:var(--pine);border-color:var(--pine);color:#fff}
+.catsec-h{display:flex;align-items:baseline;gap:10px;margin:26px 0 12px}.catsec-h h2{font-size:22px;margin:0}.catsec-h span{color:#6B756D;font-size:13px}.pgrid-in{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pgrid.is-sections{display:block}
 .pcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s;animation:cardIn .55s cubic-bezier(.22,.8,.24,1) backwards}
 .pcard:hover{transform:translateY(-6px);box-shadow:var(--sh)}
 @keyframes cardIn{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
@@ -236,7 +238,7 @@ footer{background:#08110D;color:#8FA096;padding:70px 0 34px}
 [data-reveal].in{opacity:1;transform:none}
 /* ---------- responsive ---------- */
 @media(max-width:1020px){
-  .pgrid{grid-template-columns:repeat(2,1fr)}
+  .pgrid,.pgrid-in{grid-template-columns:repeat(2,1fr)}
   .about-grid{grid-template-columns:1fr;gap:40px}
   .stats{grid-template-columns:repeat(2,1fr);gap:28px}
   .steps4{grid-template-columns:repeat(2,1fr);gap:34px}
@@ -253,7 +255,7 @@ footer{background:#08110D;color:#8FA096;padding:70px 0 34px}
   .nav-links{display:none}
   .burger{display:block}
   .nav-links.open{display:flex;position:absolute;top:72px;left:0;right:0;background:var(--paper);flex-direction:column;padding:20px 28px;gap:16px;box-shadow:0 20px 40px rgba(0,0,0,.12)}
-  .pgrid{grid-template-columns:1fr 1fr;gap:12px}
+  .pgrid,.pgrid-in{grid-template-columns:1fr 1fr;gap:12px}
   .pbody h3{font-size:14px}.price{font-size:17px}
   .xrow{grid-template-columns:1fr auto;padding:26px 4px}
   .xnum{display:none}.xgo{width:44px;height:44px}
@@ -303,9 +305,9 @@ footer{background:#08110D;color:#8FA096;padding:70px 0 34px}
 
 </style></head><body>
 <header class="nav" id="nav"><div class="wrap nav-in">
-  <a class="brand" href="./" aria-label="Rejeki Alam"><span class="brand-mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg></span><span><span data-s="site_name">Rejeki Alam</span><small data-s="tagline">MATERIAL BANGUNAN</small></span></a>
+  <a class="brand" href="./" aria-label="Rejeki Alam Solo Baru"><span class="brand-mark"></span><span><span data-s="site_name">Rejeki Alam Solo Baru</span><small data-s="tagline">ALUMINIUM • KACA • AKSESORIS</small></span></a>
   <nav class="nav-links" id="navLinks" aria-label="Navigasi utama">
-    <a href="./">Beranda</a><a href="./#tentang">Tentang</a><a href="./#kategori">Kategori</a><a href="./#harga">Harga</a><a href="./#kontak">Kontak</a>
+    <a href="/rejeki/">Beranda</a><a href="/rejeki/#tentang">Tentang</a><a href="/rejeki/#kategori">Kategori</a><a href="/rejeki/#proyek">Proyek</a><a href="/rejeki/#kontak">Kontak</a>
   </nav>
   <a class="btn btn-pine btn-sm" style="margin-left:24px" data-wa href="https://wa.me/6281234567890?text=Halo%20Rejeki%20Alam" target="_blank" rel="noopener">Hubungi WA</a>
   <button class="burger" id="burger" aria-label="Buka menu"><span></span><span></span><span></span></button>
@@ -317,13 +319,11 @@ footer{background:#08110D;color:#8FA096;padding:70px 0 34px}
     <h1 class="stitle">Katalog <em>produk.</em></h1>
     <p class="ssub">Cari, filter, dan pesan langsung via WhatsApp. Harga per satuan, stok real-time dari gudang.</p>
     <div class="toolbar">
-      <div class="searchbox"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="Cari semen, besi, cat..." autocomplete="off"></div>
+      <div class="searchbox"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="Cari aluminium, kaca, aksesoris..." autocomplete="off"></div>
       <div class="dd" id="sortDD">
         <button class="dd-btn" id="sortBtn" aria-haspopup="listbox" aria-expanded="false"><span id="sortLabel">Urutan: Unggulan</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></button>
         <div class="dd-menu" id="sortMenu" role="listbox">
           <button class="dd-item on" data-v="def" role="option">Urutan: Unggulan</button>
-          <button class="dd-item" data-v="murah" role="option">Harga: Termurah</button>
-          <button class="dd-item" data-v="mahal" role="option">Harga: Termahal</button>
           <button class="dd-item" data-v="az" role="option">Nama: A–Z</button>
         </div>
       </div>
@@ -344,7 +344,6 @@ footer{background:#08110D;color:#8FA096;padding:70px 0 34px}
       <span class="pcat" id="mcat" style="position:static"></span>
       <h2 id="mname"></h2>
       <p class="spec" id="mspec"></p>
-      <div class="mprice" id="mprice"></div>
       <a class="wa-btn" id="mwa" target="_blank" rel="noopener" style="width:100%;margin-top:18px">Pesan via WhatsApp</a>
       <p class="mnote">Stok real-time dari gudang. Untuk partai besar / proyek, <a data-wa href="https://wa.me/6281234567890" target="_blank" rel="noopener">chat sales</a> untuk penawaran khusus.</p>
     </div>
@@ -357,7 +356,7 @@ footer{background:#08110D;color:#8FA096;padding:70px 0 34px}
 
 <footer>
   <div class="wrap">
-    <div class="fbot"><span>© 2026 <span data-s="site_name">Rejeki Alam</span>. <span id="footerNote2">Harga dan stok bersifat ilustratif untuk demo.</span></span><span><a href="./" style="color:#8FA096">← Kembali ke beranda</a></span></div>
+    <div class="fbot"><span>© 2026 <span data-s="site_name">Rejeki Alam</span>. <span id="footerNote2">Harga dan stok bersifat ilustratif untuk demo.</span></span><span><a href="/rejeki/" style="color:#8FA096">← Kembali ke beranda</a></span></div>
   </div>
 </footer>
 
@@ -366,34 +365,50 @@ footer{background:#08110D;color:#8FA096;padding:70px 0 34px}
 <script>
 let WA='6281234567890', SETTINGS={}, PRODUCTS=[], CATS=[], SUBS=[];
 let f='all', sub='', sortV='def';
-const rupiah=n=>'Rp'+Number(n).toLocaleString('id-ID');
 const catLabel=s=>{const c=CATS.find(x=>x.slug===s);return c?c.label:s;};
 const grid=document.getElementById('pgrid'), q=document.getElementById('q');
 
-function waLink(p){return 'https://wa.me/'+WA+'?text='+encodeURIComponent('Halo '+(SETTINGS.site_name||'Rejeki Alam')+', saya mau pesan:\n\n'+p.name+' ('+p.spec+')\nHarga: '+rupiah(p.price)+p.unit+'\n\nMohon info stok & ongkir. Terima kasih.');}
+function waLink(p){return 'https://wa.me/'+WA+'?text='+encodeURIComponent('Halo '+(SETTINGS.site_name||'Rejeki Alam')+', saya mau pesan:\n\n'+p.name+' ('+p.spec+')\n\nMohon info stok, harga & ongkir. Terima kasih.');}
 
 function current(){
   let list=PRODUCTS.filter(p=>(f==='all'||p.category===f)&&(sub===''||p.sub===sub));
   const s=q.value.trim().toLowerCase();
   if(s) list=list.filter(p=>(p.name+' '+p.spec).toLowerCase().includes(s));
-  if(sortV==='murah') list=[...list].sort((a,b)=>a.price-b.price);
-  if(sortV==='mahal') list=[...list].sort((a,b)=>b.price-a.price);
   if(sortV==='az') list=[...list].sort((a,b)=>a.name.localeCompare(b.name));
   return list;
 }
+const PERCAT=10;
+let catExpanded={};
+function pcard(p){return `
+    <article class="pcard" data-id="${p.id}" style="cursor:pointer">
+      <div class="pthumb"><img src="${p.image}" alt="${p.name}" loading="lazy"><span class="pcat">${catLabel(p.category)}</span></div>
+      <div class="pbody"><h3>${p.name}</h3><div class="spec">${p.spec}</div>
+      </div>
+      <div class="pfoot"><span class="wa-btn" style="width:100%;pointer-events:none">Lihat Detail</span></div>
+    </article>`;}
 function render(){
   const list=current();
   document.getElementById('count').textContent=list.length+' produk ditemukan';
   document.getElementById('empty').hidden=list.length>0;
-  grid.innerHTML=list.map(p=>`
-    <article class="pcard" data-id="${p.id}" style="cursor:pointer">
-      <div class="pthumb"><img src="${p.image}" alt="${p.name}" loading="lazy"><span class="pcat">${catLabel(p.category)}</span></div>
-      <div class="pbody"><h3>${p.name}</h3><div class="spec">${p.spec}</div>
-        <div class="prow"><div class="price">${rupiah(p.price)}<small>${p.unit}</small></div></div>
-      </div>
-      <div class="pfoot"><span class="wa-btn" style="width:100%;pointer-events:none">Lihat Detail</span></div>
-    </article>`).join('');
+  if(f==='all'&&!q.value.trim()){
+    grid.classList.add('is-sections');
+    let h='';
+    for(const c of CATS){
+      const items=list.filter(p=>p.category===c.slug);
+      if(!items.length)continue;
+      const exp=catExpanded[c.slug];
+      const show=exp?items:items.slice(0,PERCAT);
+      h+=`<div class="catsec"><div class="catsec-h"><h2>${c.label}</h2><span>${items.length} produk</span></div><div class="pgrid-in">${show.map(pcard).join('')}</div>`;
+      if(items.length>PERCAT){ h+=`<div style="text-align:center;margin:14px 0 26px"><button class="btn btn-line btn-sm" onclick="toggleCat('${c.slug}')">${exp?'Tampilkan lebih sedikit':'Lihat semua '+items.length+' produk'}</button></div>`; }
+      h+='</div>';
+    }
+    grid.innerHTML=h;
+  } else {
+    grid.classList.remove('is-sections');
+    grid.innerHTML=list.map(pcard).join('');
+  }
 }
+function toggleCat(slug){ catExpanded[slug]=!catExpanded[slug]; render(); }
 grid.addEventListener('click',e=>{
   const c=e.target.closest('.pcard'); if(!c) return;
   const p=PRODUCTS.find(x=>x.id==c.dataset.id); if(!p) return;
@@ -403,7 +418,6 @@ grid.addEventListener('click',e=>{
   document.getElementById('mspec').textContent=p.spec;
   document.getElementById('mdesc').textContent=p.description||'';
   document.getElementById('mdescWrap').style.display=p.description?'':'none';
-  document.getElementById('mprice').innerHTML=rupiah(p.price)+'<small>'+p.unit+'</small>';
   document.getElementById('mwa').href=waLink(p);
   document.getElementById('modal').classList.add('open');
   document.getElementById('modal').setAttribute('aria-hidden','false');
