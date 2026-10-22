@@ -50,7 +50,9 @@ const MIGRATIONS = [
 const DEFAULT_SETTINGS = {
   site_name: 'Rejeki Alam',
   tagline: 'MATERIAL BANGUNAN',
+  brands: 'Alexindo, Inkalum, SAA, Mecca, Almini, Global',
   wa_number: '6281234567890',
+  wa_admin: '6281234567890',
   phone: '(0271) 555-0123',
   address: 'Jl. Raya Solo – Semarang KM 8, Surakarta',
   hours: 'Senin – Sabtu, 08.00 – 17.00 WIB',
